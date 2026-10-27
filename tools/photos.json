@@ -1,0 +1,889 @@
+{
+ "photos": {
+  "cde": [
+   "cde-1.jpg",
+   "cde-2.jpg",
+   "cde-3.jpg",
+   "cde-4.jpg",
+   "cde-5.jpg"
+  ],
+  "monday": [
+   "monday-2.jpg",
+   "monday-3.jpg",
+   "monday-4.jpg",
+   "monday-5.jpg",
+   "monday-1.jpg"
+  ],
+  "hern": [
+   "hern-1.jpg",
+   "hern-2.jpg",
+   "hern-3.jpg",
+   "hern-4.jpg",
+   "hern-5.jpg"
+  ],
+  "indep": [
+   "indep-1.jpg",
+   "indep-2.jpg",
+   "indep-3.jpg",
+   "indep-5.jpg"
+  ],
+  "cord": [
+   "cord-2.jpg",
+   "cord-3.jpg",
+   "cord-4.jpg",
+   "cord-5.jpg"
+  ],
+  "yag": [
+   "yag-1.jpg",
+   "yag-2.jpg",
+   "yag-3.jpg",
+   "yag-4.jpg",
+   "yag-5.jpg"
+  ],
+  "areg": [
+   "areg-2.jpg",
+   "areg-3.jpg",
+   "areg-4.jpg",
+   "areg-5.jpg"
+  ],
+  "asu1": [
+   "asu1-1.jpg",
+   "asu1-3.jpg",
+   "asu1-4.jpg",
+   "asu1-5.jpg"
+  ],
+  "asu2": [
+   "asu2-3.jpg",
+   "asu2-4.jpg",
+   "asu2-5.jpg",
+   "asu2-1.jpg",
+   "asu2-2.jpg"
+  ],
+  "pozo": [
+   "pozo-1.jpg",
+   "pozo-2.jpg",
+   "pozo-3.jpg",
+   "pozo-4.jpg"
+  ],
+  "fila": [
+   "fila-1.jpg",
+   "fila-2.jpg",
+   "fila-3.jpg",
+   "fila-5.jpg"
+  ],
+  "srosa": [
+   "srosa-3.jpg"
+  ],
+  "signa": [
+   "signa-1.jpg",
+   "signa-2.jpg",
+   "signa-3.jpg",
+   "signa-5.jpg"
+  ],
+  "ayolas": [
+   "ayolas-3.jpg",
+   "ayolas-4.jpg",
+   "ayolas-5.jpg"
+  ],
+  "trini": [
+   "trini-1.jpg",
+   "trini-2.jpg",
+   "trini-3.jpg",
+   "trini-4.jpg",
+   "trini-5.jpg"
+  ],
+  "yby": [
+   "yby-1.jpg",
+   "yby-2.jpg",
+   "yby-3.jpg",
+   "yby-4.jpg",
+   "yby-5.jpg"
+  ],
+  "lblanca": [],
+  "yguazu": [],
+  "nacunday": [
+   "nacunday-3.jpg",
+   "nacunday-2.jpg"
+  ],
+  "sanigmini": [
+   "sanigmini-1.jpg",
+   "sanigmini-2.jpg",
+   "sanigmini-3.jpg",
+   "sanigmini-4.jpg",
+   "sanigmini-5.jpg"
+  ],
+  "conc": [
+   "conc-1.jpg",
+   "conc-2.jpg",
+   "conc-3.jpg",
+   "conc-4.jpg",
+   "conc-5.jpg"
+  ],
+  "cora": [
+   "cora-1.jpg",
+   "cora-2.jpg",
+   "cora-3.jpg",
+   "cora-4.jpg"
+  ],
+  "sanber": [
+   "sanber-1.jpg",
+   "sanber-2.jpg",
+   "sanber-3.jpg",
+   "sanber-4.jpg",
+   "sanber-5.jpg"
+  ],
+  "enc": [
+   "enc-1.jpg",
+   "enc-2.jpg",
+   "enc-4.jpg",
+   "enc-5.jpg",
+   "enc-6.jpg",
+   "enc-3.jpg"
+  ],
+  "posadas": [
+   "posadas-1.jpg",
+   "posadas-2.jpg",
+   "posadas-3.jpg",
+   "posadas-4.jpg",
+   "posadas-5.jpg"
+  ]
+ },
+ "credits": {
+  "cde-1.jpg": {
+   "file": "CDE004.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CDE004.jpg",
+   "author": "O.Mustafin",
+   "license": "CC0",
+   "category": "Ciudad del Este"
+  },
+  "cde-2.jpg": {
+   "file": "CDE005.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CDE005.jpg",
+   "author": "O.Mustafin",
+   "license": "CC0",
+   "category": "Ciudad del Este"
+  },
+  "cde-3.jpg": {
+   "file": "CDE006.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CDE006.jpg",
+   "author": "O.Mustafin",
+   "license": "CC0",
+   "category": "Ciudad del Este"
+  },
+  "cde-4.jpg": {
+   "file": "CDE007.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CDE007.jpg",
+   "author": "O.Mustafin",
+   "license": "CC0",
+   "category": "Ciudad del Este"
+  },
+  "cde-5.jpg": {
+   "file": "CDE008.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CDE008.jpg",
+   "author": "O.Mustafin",
+   "license": "CC0",
+   "category": "Ciudad del Este"
+  },
+  "monday-2.jpg": {
+   "file": "Salto Monday Paraguay.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Salto_Monday_Paraguay.jpg",
+   "author": "Garcia.dennis",
+   "license": "CC BY-SA 4.0",
+   "category": "Saltos del Monday"
+  },
+  "monday-3.jpg": {
+   "file": "Saltos del Monday, Presidente Franco, Alto Paraná, Paraguay (10).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Saltos_del_Monday,_Presidente_Franco,_Alto_Paran%C3%A1,_Paraguay_(10).jpg",
+   "author": "FFE.Franco",
+   "license": "CC BY-SA 4.0",
+   "category": "Saltos del Monday"
+  },
+  "monday-4.jpg": {
+   "file": "Saltos del Monday, Presidente Franco, Alto Paraná, Paraguay (11).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Saltos_del_Monday,_Presidente_Franco,_Alto_Paran%C3%A1,_Paraguay_(11).jpg",
+   "author": "FFE.Franco",
+   "license": "CC BY-SA 4.0",
+   "category": "Saltos del Monday"
+  },
+  "monday-5.jpg": {
+   "file": "Saltos del Monday, Presidente Franco, Alto Paraná, Paraguay (12).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Saltos_del_Monday,_Presidente_Franco,_Alto_Paran%C3%A1,_Paraguay_(12).jpg",
+   "author": "FFE.Franco",
+   "license": "CC BY-SA 4.0",
+   "category": "Saltos del Monday"
+  },
+  "indep-1.jpg": {
+   "file": "Salto Suizo de Paraguay.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Salto_Suizo_de_Paraguay.jpg",
+   "author": "Ricardogomezize",
+   "license": "CC BY-SA 4.0",
+   "category": "Colonia Independencia"
+  },
+  "indep-2.jpg": {
+   "file": "Salto Suizo Paraguay.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Salto_Suizo_Paraguay.jpg",
+   "author": "Ricardogomezize",
+   "license": "CC BY-SA 4.0",
+   "category": "Colonia Independencia"
+  },
+  "indep-3.jpg": {
+   "file": "Hotel Independencia 032 filtered.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Hotel_Independencia_032_filtered.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Colonia Independencia"
+  },
+  "indep-5.jpg": {
+   "file": "Road to Colonia Independencia 036 filtered.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Road_to_Colonia_Independencia_036_filtered.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Colonia Independencia"
+  },
+  "cord-2.jpg": {
+   "file": "Calle 8 de diciembre detrás del Templo. - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Calle_8_de_diciembre_detr%C3%A1s_del_Templo._-_panoramio.jpg",
+   "author": "gomezminck",
+   "license": "CC BY-SA 3.0",
+   "category": "Caacupé"
+  },
+  "cord-3.jpg": {
+   "file": "Casas coloniales al costado de la Basílica - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Casas_coloniales_al_costado_de_la_Bas%C3%ADlica_-_panoramio.jpg",
+   "author": "gomezminck",
+   "license": "CC BY-SA 3.0",
+   "category": "Caacupé"
+  },
+  "cord-4.jpg": {
+   "file": "Ciudad de Caacupe desde el mirador de la Basílica. - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Ciudad_de_Caacupe_desde_el_mirador_de_la_Bas%C3%ADlica._-_panoramio.jpg",
+   "author": "gomezminck",
+   "license": "CC BY-SA 3.0",
+   "category": "Caacupé"
+  },
+  "cord-5.jpg": {
+   "file": "Mirador de Caacupe. - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Mirador_de_Caacupe._-_panoramio.jpg",
+   "author": "gomezminck",
+   "license": "CC BY-SA 3.0",
+   "category": "Caacupé"
+  },
+  "yag-1.jpg": {
+   "file": "Panorámica de la ciudad de Yaguarón (la más poblada del departamento de Paraguarí), desde el cerro Yaguarón.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Panor%C3%A1mica_de_la_ciudad_de_Yaguar%C3%B3n_(la_m%C3%A1s_poblada_del_departamento_de_Paraguar%C3%AD),_desde_el_cerro_Yaguar%C3%B3n.jpg",
+   "author": "Ulises Icardi",
+   "license": "CC BY-SA 4.0",
+   "category": "Yaguarón"
+  },
+  "yag-2.jpg": {
+   "file": "Vista panorámica de Yaguarón desde el cerro homónimo.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Vista_panor%C3%A1mica_de_Yaguar%C3%B3n_desde_el_cerro_hom%C3%B3nimo.jpg",
+   "author": "Ulises Icardi",
+   "license": "CC BY-SA 4.0",
+   "category": "Yaguarón"
+  },
+  "yag-3.jpg": {
+   "file": "Yaguarón, Paraguay - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Yaguar%C3%B3n,_Paraguay_-_panoramio.jpg",
+   "author": "Rodney Damián",
+   "license": "CC BY-SA 3.0",
+   "category": "Yaguarón"
+  },
+  "yag-4.jpg": {
+   "file": "IGLESIA DE YAGUARON - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:IGLESIA_DE_YAGUARON_-_panoramio.jpg",
+   "author": "gomezminck",
+   "license": "CC BY-SA 3.0",
+   "category": "Yaguarón"
+  },
+  "yag-5.jpg": {
+   "file": "OBRA DE ARTE DE SUPREMA BELLEZA - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:OBRA_DE_ARTE_DE_SUPREMA_BELLEZA_-_panoramio.jpg",
+   "author": "gomezminck",
+   "license": "CC BY-SA 3.0",
+   "category": "Yaguarón"
+  },
+  "areg-2.jpg": {
+   "file": "Aregua-1.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Aregua-1.jpg",
+   "author": "Pixelfree (Diskussion)",
+   "license": "CC BY-SA 3.0 de",
+   "category": "Areguá"
+  },
+  "areg-3.jpg": {
+   "file": "Areguá, Töpferbetriebe.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Aregu%C3%A1,_T%C3%B6pferbetriebe.jpg",
+   "author": "Cathixx",
+   "license": "CC BY-SA 4.0",
+   "category": "Areguá"
+  },
+  "areg-4.jpg": {
+   "file": "Colonnaded houses 097.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Colonnaded_houses_097.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Areguá"
+  },
+  "areg-5.jpg": {
+   "file": "Estación terrena 6454.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Estaci%C3%B3n_terrena_6454.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Areguá"
+  },
+  "asu2-1.jpg": {
+   "file": "Atardeceres desde mi ventana - Flickr - abel.maestro.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Atardeceres_desde_mi_ventana_-_Flickr_-_abel.maestro.jpg",
+   "author": "Abel Maestro Garcia from Asunción, España",
+   "license": "Public domain",
+   "category": "Asunción"
+  },
+  "asu2-2.jpg": {
+   "file": "Diversion Analogica (52520331598).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Diversion_Analogica_(52520331598).jpg",
+   "author": "Abel Maestro Garcia from Asunción, España",
+   "license": "Public domain",
+   "category": "Asunción"
+  },
+  "pozo-1.jpg": {
+   "file": "Pozo Colorado, empalme entre las rutas nacionales PY05 \"General Bernardino Caballero\" y PY09 \"Trans-Chaco\".jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Pozo_Colorado,_empalme_entre_las_rutas_nacionales_PY05_%22General_Bernardino_Caballero%22_y_PY09_%22Trans-Chaco%22.jpg",
+   "author": "Ulises Icardi",
+   "license": "CC BY-SA 4.0",
+   "category": "Pozo Colorado"
+  },
+  "pozo-2.jpg": {
+   "file": "Pozo Colorado. - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Pozo_Colorado._-_panoramio.jpg",
+   "author": "gomezminck",
+   "license": "CC BY-SA 3.0",
+   "category": "Pozo Colorado"
+  },
+  "pozo-3.jpg": {
+   "file": "Pozo Colorado, empalme de las rutas nacionales PY05 y PY09..jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Pozo_Colorado,_empalme_de_las_rutas_nacionales_PY05_y_PY09..jpg",
+   "author": "Ulises Icardi",
+   "license": "CC BY-SA 4.0",
+   "category": "Pozo Colorado"
+  },
+  "pozo-4.jpg": {
+   "file": "Pozo Colorado IMG 7813.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Pozo_Colorado_IMG_7813.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 3.0",
+   "category": "Pozo Colorado"
+  },
+  "fila-1.jpg": {
+   "file": "Avenida Central 171523.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Avenida_Central_171523.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Loma Plata"
+  },
+  "fila-2.jpg": {
+   "file": "Avenida Central 171603.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Avenida_Central_171603.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Loma Plata"
+  },
+  "fila-3.jpg": {
+   "file": "Avenida Central 171615.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Avenida_Central_171615.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Loma Plata"
+  },
+  "fila-5.jpg": {
+   "file": "Biblioteca de Loma Plata 164858.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Biblioteca_de_Loma_Plata_164858.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Loma Plata"
+  },
+  "srosa-3.jpg": {
+   "file": "Laguna Blanca Paraguay.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Laguna_Blanca_Paraguay.jpg",
+   "author": "Overkill53",
+   "license": "CC BY-SA 4.0",
+   "category": "Laguna Blanca (Paraguay)"
+  },
+  "signa-1.jpg": {
+   "file": "SFE - Black howler monkey in the main square of Santa Maria de Fe, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:SFE_-_Black_howler_monkey_in_the_main_square_of_Santa_Maria_de_Fe,_Paraguay,_2023.jpg",
+   "author": "Autor desconocido",
+   "license": "CC BY-SA 4.0",
+   "category": "Santa María de Fe"
+  },
+  "signa-2.jpg": {
+   "file": "SFE - Black howler monkeys in the main square of Santa Maria de Fe, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:SFE_-_Black_howler_monkeys_in_the_main_square_of_Santa_Maria_de_Fe,_Paraguay,_2023.jpg",
+   "author": "Autor desconocido",
+   "license": "CC BY-SA 4.0",
+   "category": "Santa María de Fe"
+  },
+  "signa-3.jpg": {
+   "file": "SFE - Central square of Santa Maria de Fe, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:SFE_-_Central_square_of_Santa_Maria_de_Fe,_Paraguay,_2023.jpg",
+   "author": "Autor desconocido",
+   "license": "CC BY-SA 4.0",
+   "category": "Santa María de Fe"
+  },
+  "signa-5.jpg": {
+   "file": "SFE - Former indigenous house housing the Jesuit Guarani art museum, Santa Maria de Fe, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:SFE_-_Former_indigenous_house_housing_the_Jesuit_Guarani_art_museum,_Santa_Maria_de_Fe,_Paraguay,_2023.jpg",
+   "author": "Autor desconocido",
+   "license": "CC BY-SA 4.0",
+   "category": "Santa María de Fe"
+  },
+  "ayolas-3.jpg": {
+   "file": "Moon in yacyreta.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Moon_in_yacyreta.jpg",
+   "author": "Hydra 690",
+   "license": "CC BY-SA 4.0",
+   "category": "Ayolas"
+  },
+  "ayolas-4.jpg": {
+   "file": "Ayolas sunset.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Ayolas_sunset.jpg",
+   "author": "Guillermo2149",
+   "license": "CC BY-SA 4.0",
+   "category": "Ayolas"
+  },
+  "trini-1.jpg": {
+   "file": "J37 762 Krypta.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_762_Krypta.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "La Santísima Trinidad de Paraná"
+  },
+  "trini-2.jpg": {
+   "file": "J37 743 Santísima Trinidad de Paraná.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_743_Sant%C3%ADsima_Trinidad_de_Paran%C3%A1.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "La Santísima Trinidad de Paraná"
+  },
+  "trini-3.jpg": {
+   "file": "J37 748 Wohnhäuser mit Arkaden.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_748_Wohnh%C3%A4user_mit_Arkaden.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "La Santísima Trinidad de Paraná"
+  },
+  "trini-4.jpg": {
+   "file": "J37 754 Kirche, Innenraum.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_754_Kirche,_Innenraum.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "La Santísima Trinidad de Paraná"
+  },
+  "trini-5.jpg": {
+   "file": "J37 765 Santísima Trinidad de Paraná, patio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_765_Sant%C3%ADsima_Trinidad_de_Paran%C3%A1,_patio.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "La Santísima Trinidad de Paraná"
+  },
+  "yby-1.jpg": {
+   "file": "Presa de la Antigua Fundición de Hierro - La Rosada - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Presa_de_la_Antigua_Fundici%C3%B3n_de_Hierro_-_La_Rosada_-_panoramio.jpg",
+   "author": "Diego Fernando Quint…",
+   "license": "CC BY-SA 3.0",
+   "category": "Ybycuí National Park"
+  },
+  "yby-2.jpg": {
+   "file": "Salto Cristal - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Salto_Cristal_-_panoramio.jpg",
+   "author": "Diego Fernando Quint…",
+   "license": "CC BY 3.0",
+   "category": "Ybycuí National Park"
+  },
+  "yby-3.jpg": {
+   "file": "Salto Guarani - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Salto_Guarani_-_panoramio.jpg",
+   "author": "Diego Fernando Quint…",
+   "license": "CC BY 3.0",
+   "category": "Ybycuí National Park"
+  },
+  "yby-4.jpg": {
+   "file": "Entrada a la Rosada.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Entrada_a_la_Rosada.jpg",
+   "author": "Lokote100",
+   "license": "CC BY-SA 3.0",
+   "category": "Ybycuí National Park"
+  },
+  "yby-5.jpg": {
+   "file": "Represa de la fundicion.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Represa_de_la_fundicion.jpg",
+   "author": "Lokote100",
+   "license": "CC BY-SA 3.0",
+   "category": "Ybycuí National Park"
+  },
+  "nacunday-3.jpg": {
+   "file": "Salto del Ñacunday - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Salto_del_%C3%91acunday_-_panoramio.jpg",
+   "author": "Rodney Damián",
+   "license": "CC BY-SA 3.0",
+   "category": "Ñacunday National Park"
+  },
+  "sanigmini-1.jpg": {
+   "file": "J37 627 San Ignacio Miní, Modell.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_627_San_Ignacio_Min%C3%AD,_Modell.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "San Ignacio Miní"
+  },
+  "sanigmini-2.jpg": {
+   "file": "J37 628 San Ignacio Miní, Modellausschnitt.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J37_628_San_Ignacio_Min%C3%AD,_Modellausschnitt.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "San Ignacio Miní"
+  },
+  "sanigmini-3.jpg": {
+   "file": "SIgnaciom33.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:SIgnaciom33.jpg",
+   "author": "O.Mustafin",
+   "license": "CC0",
+   "category": "San Ignacio Miní"
+  },
+  "sanigmini-4.jpg": {
+   "file": "Church ruins seen from the indigenous residential area at San Ignacio Mini, Argentina.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Church_ruins_seen_from_the_indigenous_residential_area_at_San_Ignacio_Mini,_Argentina.jpg",
+   "author": "Josep M. Gracia",
+   "license": "CC BY-SA 4.0",
+   "category": "San Ignacio Miní"
+  },
+  "sanigmini-5.jpg": {
+   "file": "Decorated lateral doorway of the church at San Ignacio Mini, Argentina.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Decorated_lateral_doorway_of_the_church_at_San_Ignacio_Mini,_Argentina.jpg",
+   "author": "Josep M. Gracia",
+   "license": "CC BY-SA 4.0",
+   "category": "San Ignacio Miní"
+  },
+  "conc-1.jpg": {
+   "file": "Atardecer en el río Paraguay, a su paso por Concepción (Paraguay).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Atardecer_en_el_r%C3%ADo_Paraguay,_a_su_paso_por_Concepci%C3%B3n_(Paraguay).jpg",
+   "author": "Ulises Icardi",
+   "license": "CC BY-SA 4.0",
+   "category": "Concepción, Paraguay"
+  },
+  "conc-2.jpg": {
+   "file": "CON - Central street in Concepcion, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CON_-_Central_street_in_Concepcion,_Paraguay,_2023.jpg",
+   "author": "Josep M. Gracia",
+   "license": "CC BY-SA 4.0",
+   "category": "Concepción, Paraguay"
+  },
+  "conc-3.jpg": {
+   "file": "CON - Italianate houses in Concepcion, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CON_-_Italianate_houses_in_Concepcion,_Paraguay,_2023.jpg",
+   "author": "Josep M. Gracia",
+   "license": "CC BY-SA 4.0",
+   "category": "Concepción, Paraguay"
+  },
+  "conc-4.jpg": {
+   "file": "CON - Old port area of Concepcion, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CON_-_Old_port_area_of_Concepcion,_Paraguay,_2023.jpg",
+   "author": "Josep M. Gracia",
+   "license": "CC BY-SA 4.0",
+   "category": "Concepción, Paraguay"
+  },
+  "conc-5.jpg": {
+   "file": "CON - Paraguay River at Concepcion, Paraguay, 2023.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:CON_-_Paraguay_River_at_Concepcion,_Paraguay,_2023.jpg",
+   "author": "Josep M. Gracia",
+   "license": "CC BY-SA 4.0",
+   "category": "Concepción, Paraguay"
+  },
+  "cora-1.jpg": {
+   "file": "Aquidaban river in Cerro Cora 133323.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Aquidaban_river_in_Cerro_Cora_133323.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "Cerro Cora National Park"
+  },
+  "cora-2.jpg": {
+   "file": "Aquidaban river in Cerro Cora 133735.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Aquidaban_river_in_Cerro_Cora_133735.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "Cerro Cora National Park"
+  },
+  "cora-3.jpg": {
+   "file": "Camping site at Cerro Cora 133925.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Camping_site_at_Cerro_Cora_133925.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "Cerro Cora National Park"
+  },
+  "cora-4.jpg": {
+   "file": "Cerro Corá park visitors center 130122.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Cerro_Cor%C3%A1_park_visitors_center_130122.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "Cerro Cora National Park"
+  },
+  "sanber-1.jpg": {
+   "file": "Pedestrian street art in San Bernardino 194956.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Pedestrian_street_art_in_San_Bernardino_194956.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "San Bernardino, Paraguay"
+  },
+  "sanber-2.jpg": {
+   "file": "Sunset at Ypacaraí lake 195740 HDR.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Sunset_at_Ypacara%C3%AD_lake_195740_HDR.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "San Bernardino, Paraguay"
+  },
+  "sanber-3.jpg": {
+   "file": "Sunset at Ypacaraí lake 200624.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Sunset_at_Ypacara%C3%AD_lake_200624.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "San Bernardino, Paraguay"
+  },
+  "sanber-4.jpg": {
+   "file": "Ypacaraí lake shoreline at sunset 195634 HDR.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Ypacara%C3%AD_lake_shoreline_at_sunset_195634_HDR.jpg",
+   "author": "Cmasi",
+   "license": "CC0",
+   "category": "San Bernardino, Paraguay"
+  },
+  "sanber-5.jpg": {
+   "file": "Monumento al Soldado Paraguayo Desconocido.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Monumento_al_Soldado_Paraguayo_Desconocido.jpg",
+   "author": "Ulises Icardi",
+   "license": "CC BY-SA 4.0",
+   "category": "San Bernardino, Paraguay"
+  },
+  "ayolas-5.jpg": {
+   "file": "Paraná river at Ayolas-WA0082.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Paran%C3%A1_river_at_Ayolas-WA0082.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "Ayolas"
+  },
+  "enc-3.jpg": {
+   "file": "Chipa paraguaya en el Circuito Comercial de Encarnación (Paraguay).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Chipa_paraguaya_en_el_Circuito_Comercial_de_Encarnaci%C3%B3n_(Paraguay).jpg",
+   "author": "Horacio Cambeiro",
+   "license": "CC BY-SA 3.0",
+   "category": "Encarnación"
+  },
+  "hern-1.jpg": {
+   "file": "Barragem de Itaipu (8155763889).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Barragem_de_Itaipu_(8155763889).jpg",
+   "author": "Leandro Neumann Ciuffo",
+   "license": "CC BY 2.0",
+   "category": "selección manual"
+  },
+  "hern-2.jpg": {
+   "file": "Barragem de itaipu.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Barragem_de_itaipu.jpg",
+   "author": "MARMOREIRA",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "hern-3.jpg": {
+   "file": "Barragem Itaipu.JPG",
+   "source": "https://commons.wikimedia.org/wiki/File:Barragem_Itaipu.JPG",
+   "author": "Lumamaia",
+   "license": "CC BY-SA 3.0",
+   "category": "selección manual"
+  },
+  "hern-4.jpg": {
+   "file": "BARRAGEM.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:BARRAGEM.jpg",
+   "author": "MARMOREIRA",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "hern-5.jpg": {
+   "file": "BR Itaipu 0610 001 (17211533935).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:BR_Itaipu_0610_001_(17211533935).jpg",
+   "author": "Diego Tirira from Quito, Ecuador",
+   "license": "CC BY-SA 2.0",
+   "category": "selección manual"
+  },
+  "asu1-1.jpg": {
+   "file": "Palacio de los López.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Palacio_de_los_L%C3%B3pez.jpg",
+   "author": "Fotografía tomada por \"globevisions\" usuario de Flickr.",
+   "license": "CC BY 2.0",
+   "category": "selección manual"
+  },
+  "asu1-3.jpg": {
+   "file": "Palacio de Lopez from above.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Palacio_de_Lopez_from_above.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "asu1-4.jpg": {
+   "file": "Mercado cuatro - 1 (8041854944).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Mercado_cuatro_-_1_(8041854944).jpg",
+   "author": "Leandro Neumann Ciuffo",
+   "license": "CC BY 2.0",
+   "category": "selección manual"
+  },
+  "asu1-5.jpg": {
+   "file": "Casa de la Independencia-Bicentenario.JPG",
+   "source": "https://commons.wikimedia.org/wiki/File:Casa_de_la_Independencia-Bicentenario.JPG",
+   "author": "Thalmaniano",
+   "license": "CC BY 3.0",
+   "category": "selección manual"
+  },
+  "asu2-3.jpg": {
+   "file": "Catedral Metropolitana de Asunción, Paraguay.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Catedral_Metropolitana_de_Asunci%C3%B3n,_Paraguay.jpg",
+   "author": "Chipachyryry",
+   "license": "CC0",
+   "category": "selección manual"
+  },
+  "asu2-4.jpg": {
+   "file": "Asuncion Palacio Lopez.JPG",
+   "source": "https://commons.wikimedia.org/wiki/File:Asuncion_Palacio_Lopez.JPG",
+   "author": "Jan Pešula User:Sapfan",
+   "license": "CC BY-SA 2.5",
+   "category": "selección manual"
+  },
+  "asu2-5.jpg": {
+   "file": "Catedral de Asunción Paraguay.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Catedral_de_Asunci%C3%B3n_Paraguay.jpg",
+   "author": "FF MM",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "enc-1.jpg": {
+   "file": "Encarnación skyline from Posadas.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Encarnaci%C3%B3n_skyline_from_Posadas.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "enc-2.jpg": {
+   "file": "Paseo San José, Encarnación 01.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Paseo_San_Jos%C3%A9,_Encarnaci%C3%B3n_01.jpg",
+   "author": "FFE.Franco",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "enc-4.jpg": {
+   "file": "J38 025 Encarnación, Avenida Costanera Republica del Paraguay.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:J38_025_Encarnaci%C3%B3n,_Avenida_Costanera_Republica_del_Paraguay.jpg",
+   "author": "Falk2",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "enc-5.jpg": {
+   "file": "Encarnación with Paraná river in the background 092.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Encarnaci%C3%B3n_with_Paran%C3%A1_river_in_the_background_092.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "enc-6.jpg": {
+   "file": "Panorama of Encarnación 056.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Panorama_of_Encarnaci%C3%B3n_056.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "posadas-1.jpg": {
+   "file": "Andresguacurari.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Andresguacurari.jpg",
+   "author": "Ezequiel12096",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "posadas-2.jpg": {
+   "file": "Catedral San José, Posadas.JPG",
+   "source": "https://commons.wikimedia.org/wiki/File:Catedral_San_Jos%C3%A9,_Posadas.JPG",
+   "author": "EMBrandán",
+   "license": "CC BY-SA 3.0",
+   "category": "selección manual"
+  },
+  "posadas-3.jpg": {
+   "file": "Encarnación with Posadas in the background 067.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Encarnaci%C3%B3n_with_Posadas_in_the_background_067.jpg",
+   "author": "Cmasi",
+   "license": "CC BY-SA 4.0",
+   "category": "selección manual"
+  },
+  "posadas-4.jpg": {
+   "file": "Antigua Estación de trenes de Posadas, entrada al edificio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Antigua_Estaci%C3%B3n_de_trenes_de_Posadas,_entrada_al_edificio.jpg",
+   "author": "EMBrandán",
+   "license": "CC BY-SA 3.0",
+   "category": "selección manual"
+  },
+  "monday-1.jpg": {
+   "file": "Saltos del Monday - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Saltos_del_Monday_-_panoramio.jpg",
+   "author": "Rodney Damián",
+   "license": "CC BY-SA 3.0",
+   "category": "Saltos del Monday"
+  },
+  "posadas-5.jpg": {
+   "file": "Tocando el cielo con las ramas (22129069869).jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Tocando_el_cielo_con_las_ramas_(22129069869).jpg",
+   "author": "Papa Pic from Eldorado, Argentina",
+   "license": "CC0",
+   "category": "Posadas Cathedral"
+  },
+  "nacunday-2.jpg": {
+   "file": "Parque Nacional de Ñacunday - panoramio.jpg",
+   "source": "https://commons.wikimedia.org/wiki/File:Parque_Nacional_de_%C3%91acunday_-_panoramio.jpg",
+   "author": "Rodney Damián",
+   "license": "CC BY-SA 3.0",
+   "category": "Ñacunday National Park"
+  }
+ },
+ "rejected": [
+  "Pinturas, teatro en Caacupé.jpg",
+  "Hotel pool in Colonia Independencia 152 filtered.jpg",
+  "Plantación de Berro - panoramio.jpg",
+  "Biblioteca de Loma Plata 164300.jpg",
+  "Museum in Cerro Corá 131409.jpg",
+  "Leucanella memusae.jpg",
+  "SFE - Entrance road to Santa Maria de Fe, Paraguay, 2023.jpg",
+  "Campo Flicker - Flickr - GregTheBusker (1).jpg",
+  "Acceso Ayolas IMG 8492.JPG",
+  "BR Itaipu 0610 005 (16589081884).jpg",
+  "Palacio de Lopez light 111037.jpg",
+  "Laguna Blanca 1010825.jpg",
+  "YGUAZU - panoramio.jpg",
+  "Camino al Parque Nacional de Ñacunday - panoramio.jpg"
+ ],
+ "locked": [
+  "areg",
+  "asu1",
+  "asu2",
+  "ayolas",
+  "cde",
+  "conc",
+  "cora",
+  "cord",
+  "enc",
+  "fila",
+  "hern",
+  "indep",
+  "lblanca",
+  "monday",
+  "nacunday",
+  "posadas",
+  "pozo",
+  "sanber",
+  "sanigmini",
+  "signa",
+  "srosa",
+  "trini",
+  "yag",
+  "yby",
+  "yguazu"
+ ]
+}
