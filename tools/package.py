@@ -1,6 +1,6 @@
 """Empaqueta tools/data.json (sitios, rutas) + tools/photos.json (fotos) en assets/data.js.
 Uso: python tools/package.py   (desde la raíz del repo)"""
-import json, os
+import json, os, re
 
 d = json.load(open('tools/data.json'))
 ph = json.load(open('tools/photos.json'))
@@ -34,13 +34,31 @@ photos['asu2'] = photos.get('asu2', []) + [p for p in photos.get('asu1', []) if 
 attr = {str(i): f'assets/photos/th/{n}.jpg' for i, n in ATTR.items() if os.path.exists(f'assets/photos/{n}.jpg')}
 
 # los comentarios de iOverlander se recortan: el sitio es público y enlaza a iOverlander para leer el resto
+PRICE = re.compile(r'(₲|R\$|US\$|\$)\s?\d|\d[\d.,\s’\']*\s?(k\b|mil\b|gs|g\b|g/|pyg|guaran|r\$|reais|usd|d[oó]lar)', re.I)
 for p in d['places'].values():
+    # fragmentos de comentarios con precio (más recientes primero), por si el comentario recortado lo pierde
+    pc = []
+    for c in p.get('comments', []):
+        m = PRICE.search(c['text'])
+        if m: pc.append(dict(date=c['date'], text=('…' if m.start() > 60 else '') + c['text'][max(0, m.start() - 60):m.end() + 120].strip()))
+    if pc: p['pc'] = pc[:3]
     p['comments'] = [dict(c, text=c['text'][:300] + ('…' if len(c['text']) > 300 else '')) for c in p.get('comments', [])[:3]]
     p['desc'] = (p.get('desc') or '')[:500]
 d.pop('laundryAll', None)
 
 credits = {f: c for f, c in ph['credits'].items() if os.path.exists(full(f))}
-out = dict(d, photos=photos, attrPhoto=attr, credits=credits)
+
+# galería de cada atracción: fotos propias (tools/attr_photos.py) y, al final, la foto de la parada que ya la mostraba
+ap = json.load(open('tools/attr_photos.json')) if os.path.exists('tools/attr_photos.json') else {'pick': {}, 'credits': {}}
+attr_gal = {}
+for i in {*map(str, ATTR), *ap['pick']}:
+    own = [f'assets/photos/a/{i}-{n}.jpg' for n in range(1, len(ap['pick'].get(i, [])) + 1) if os.path.exists(f'assets/photos/a/{i}-{n}.jpg')]
+    old = [full(ATTR[int(i)] + '.jpg')] if int(i) in ATTR and os.path.exists(full(ATTR[int(i)] + '.jpg')) else []
+    if own or old: attr_gal[i] = own + old
+    if own: attr[i] = own[0].replace('/a/', '/a/th/')
+for f, c in ap['credits'].items():
+    if os.path.exists(f'assets/photos/a/{f}'): credits['a/' + f] = dict(c, th=f'assets/photos/a/th/{f}')
+out = dict(d, photos=photos, attrPhoto=attr, attrPhotos=attr_gal, credits=credits)
 js = 'window.DATA = ' + json.dumps(out, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
 open('assets/data.js', 'w').write(js)
 print('data.js', len(js) // 1024, 'KB ·', len(photos), 'paradas con foto ·', len(attr), 'atracciones con foto ·', len(credits), 'créditos')

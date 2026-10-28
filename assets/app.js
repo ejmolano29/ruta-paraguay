@@ -46,7 +46,7 @@ const IC = {
   edit:'<path d="M4 20h4L19 9l-4-4L4 16z"/>', trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
   fit:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>', alert:'<path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/>',
   info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/>', key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/>',
-  camp:'<path d="M3 20 12 4l9 16z"/><path d="M12 20l-3.5-6h7z"/>', sync:'<path d="M20 11a8 8 0 0 0-14-4.5L4 9M4 13a8 8 0 0 0 14 4.5L20 15"/><path d="M4 4v5h5M20 20v-5h-5"/>',
+  camp:'<path d="M3 20 12 4l9 16z"/><path d="M12 20l-3.5-6h7z"/>', photo:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>', sync:'<path d="M20 11a8 8 0 0 0-14-4.5L4 9M4 13a8 8 0 0 0 14 4.5L20 15"/><path d="M4 4v5h5M20 20v-5h-5"/>',
 };
 const icon = (n, cls='') => `<span data-icon class="${cls}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[n]||''}</svg></span>`;
 function hydrateIcons(root = document){ root.querySelectorAll('[data-icon]:empty').forEach(e => e.outerHTML = icon(e.dataset.icon, e.className)); }
@@ -266,7 +266,7 @@ function rowPos(r){
   return a ? {lat: a.lat, lon: a.lon} : {lat: -25.3, lon: -57.6};
 }
 const ck4 = p => `${p.lat.toFixed(3)},${p.lon.toFixed(3)}`;
-const LEGS = Object.assign({}, ls.get('pm-legs', {}));
+const LEGS = Object.assign({}, DATA.vlegs || {}, ls.get('pm-legs', {}));
 (() => { // tramos precalculados (OSRM) indexados por coordenadas de los hospedajes sugeridos
   Object.entries(DATA.legs).forEach(([k, v]) => {
     const [a, b] = k.split('|'); if (!DEF[a] || !DEF[b]) return;
@@ -277,22 +277,34 @@ const LEGS = Object.assign({}, ls.get('pm-legs', {}));
 const pend = new Set();
 function hav(a, b){ const R = 6371, r = Math.PI/180, dl = (b.lat-a.lat)*r, dn = (b.lon-a.lon)*r;
   const x = Math.sin(dl/2)**2 + Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dn/2)**2; return 2*R*Math.asin(Math.sqrt(x)); }
-function leg(a, b){
-  const pa = rowPos(a), pb = rowPos(b), k = ck4(pa) + '>' + ck4(pb);
+function leg(a, b){ return legP(rowPos(a), rowPos(b)); }
+// quiet: solo actualiza los elementos [data-leg] (fichas y tarjetas) sin redibujar la página
+function legP(pa, pb, quiet){
+  const k = ck4(pa) + '>' + ck4(pb);
   if (k.split('>')[0] === k.split('>')[1]) return {km: 0, min: 0, geo: null};
   if (LEGS[k]) return LEGS[k];
   if (!pend.has(k)) {
     pend.add(k);
-    fetch(`https://router.project-osrm.org/route/v1/driving/${pa.lon},${pa.lat};${pb.lon},${pb.lat}?overview=simplified&geometries=geojson`)
+    fetch(`https://router.project-osrm.org/route/v1/driving/${pa.lon},${pa.lat};${pb.lon},${pb.lat}?overview=${quiet ? 'false' : 'simplified&geometries=geojson'}`)
       .then(r => r.json()).then(j => {
         const rt = j.routes[0];
-        LEGS[k] = {km: Math.round(rt.distance/1000), min: Math.round(rt.duration/60), geo: rt.geometry.coordinates.map(c => [+c[1].toFixed(4), +c[0].toFixed(4)])};
+        LEGS[k] = quiet ? {km: Math.round(rt.distance/100)/10, min: Math.round(rt.duration/60)}
+          : {km: Math.round(rt.distance/1000), min: Math.round(rt.duration/60), geo: rt.geometry.coordinates.map(c => [+c[1].toFixed(4), +c[0].toFixed(4)])};
         const extra = ls.get('pm-legs', {}); extra[k] = LEGS[k]; ls.set('pm-legs', extra);
-        render();
+        if (quiet) document.querySelectorAll(`[data-leg="${k}"]`).forEach(e => e.innerHTML = legTxt(LEGS[k])); else render();
       }).catch(() => {});
   }
-  const km = Math.round(hav(pa, pb) * 1.3);
-  return {km, min: Math.round(km / 65 * 60), approx: true};
+  const km = Math.round(hav(pa, pb) * 1.3 * 10) / 10;
+  return {km: quiet ? km : Math.round(km), min: Math.round(km / (km < 15 ? 35 : 65) * 60), approx: true};
+}
+const legTxt = lg => `${lg.approx ? '≈ ' : ''}${lg.km < 10 ? String(lg.km).replace('.', ',') : Math.round(lg.km)} km · ${hm(lg.min)}`;
+// punto de partida para visitar: hospedaje elegido (o el del check-in) de la parada
+function basePos(stopKey){
+  const r = T.rows.find(x => x.key === stopKey), def = DEF[stopKey] || r?.def;
+  if (!def) return null;
+  const pos = r ? rowPos(r) : rowPos({def, lodging: def.lodging});
+  const id = r ? (r.ck ? r.ck.place_id : r.lodging) : def.lodging;
+  return {pos, name: r?.ck?.place_name || PL[id]?.name || def.name};
 }
 
 /* ================================================================ etiquetas de sitios */
@@ -317,16 +329,52 @@ function access(p){
   return (p.road || []).some(r => /4x4|barro|embarr|arena|atasc|inund|mud|sand/i.test(r.text)) ? ['warn','Revisar acceso'] : ['ok','Sin reportes 4x4'];
 }
 const costTxt = p => p.cur?.cost || (p.cost ? p.cost.text + (p.cost.date ? ` (${p.cost.date})` : '') : 'Sin dato');
-function shortCost(p){
+// precio en un texto: 75.000 Gs · 90,000 guaraníes · 80’000 PYG · 10000 Gs · 140 mil · R$70 · $13 USD (descarta teléfonos y horas)
+const CUR = String.raw`₲|G\$|Gs\.?|G(?=\b|\/)|PYG|guaran[ií]\w*|R\$|reais|reales|US\$|U\$S|USD|d[oó]lares|\$`;
+const NUM = String.raw`\d{1,3}(?:[.,\s’']\d{3})+(?![.,’']?\d)|\d{1,6}`;
+const PRE = new RegExp(String.raw`(?<![\d+]|\d[.\s-])(${CUR})\s?(${NUM})\s*(k|mil)?\b\s*(${CUR})?`, 'gi');
+const SUF = new RegExp(String.raw`(?<![\d+]|\d[.,\s’'-]|[\d.,]\d)(${NUM})\s*(k|mil)?\s*(${CUR})?`, 'gi');
+const PER = [['por hora', /\b(?:por|per|la|\/)\s?(?:hora|hour|h)\b/i], ['por persona', /\b(?:por|per|\/)\s?(?:persona|person|pax|cabeza)|\bpp\b|cada uno|each/i],
+  ['para dos', /\b(?:para|por|for)\s(?:dos|2|two)\b|\b(?:2|dos)\s(?:personas|people|pers)/i], ['por vehículo', /\b(?:por|per|\/)\s?(?:veh[ií]culo|vehicle|auto|carro|camper|motorhome|van|furgo\w*|casa rodante)/i],
+  ['por noche', /\b(?:por|per|\/|a)\s?(?:noche|night|nuit)/i], ['por día', /\b(?:por|per|\/)\s?(?:d[ií]a|day)\b|diari[ao]/i]];
+function priceIn(t){
+  const hits = [];
+  for (const re of [PRE, SUF]) { re.lastIndex = 0; let m;
+    while ((m = re.exec(t))) {
+      const pre = re === PRE, cur0 = pre ? m[1] : m[3], num = pre ? m[2] : m[1], k = pre ? m[3] : m[2], cur1 = pre ? m[4] : '';
+      const cur = cur0 || cur1 || '';
+      let v = +num.replace(/[^\d]/g, ''); if (k) v *= 1000;
+      const after = t.slice(m.index + m[0].length, m.index + m[0].length + 40);
+      if (/^\s*(?:m\b|km|kg|metros|habitantes|a[ñn]os|h\b|hs\b|min|%|:)/i.test(after) || /^\d{1,2}:\d{2}/.test(num)) continue;
+      let c = /R\$|reais|reales/i.test(cur) ? 'R$' : /US|USD|d[oó]lar/i.test(cur) ? 'USD' : cur === '$' ? (v >= 1000 ? 'Gs' : 'USD') : cur ? 'Gs' : (v >= 1000 && (k || /[.,\s’']/.test(num)) ? 'Gs' : '');
+      if (!c || (c === 'Gs' && v < 1000) || v > 2e6 || (c !== 'Gs' && v > 2000)) continue;
+      const near = PER.map(([l, r]) => { const x = after.search(r); return [x < 0 ? 99 : x, l]; }).sort((a, b) => a[0] - b[0])[0];
+      hits.push({i: m.index, amt: `${v.toLocaleString('es-PY')} ${c}`, per: near[0] < 30 ? near[1] : 'por noche'});
+    }
+  }
+  return hits.sort((a, b) => a.i - b.i)[0] || null;
+}
+// precio para el listado: costo curado o del último comentario con monto; si no hay monto, fragmentos de comentarios
+function priceOf(p){
   const t = costTxt(p);
-  if (/^gratis/i.test(t)) return ['Gratis', ''];
-  // precios de hasta 999.999 (descarta teléfonos como 974 176 182)
-  const m = t.match(/(?<![\d+]|\d[.\s-])(\d{1,3}[.\s]\d{3}(?![.\s]?\d)|\d{2,3}(?=\s?(?:k|mil)\b)|\d+(?=\s?(?:R\$|reais|USD|Gs|PYG)))\s*(k|mil)?\s*(Gs|PYG|R\$|reais|USD|guaran\w*)?/i);
-  if (!m) return ['—', ''];
-  let n = m[1].replace(/\s/g, '.'); if (m[2]) n += '.000';
-  const cur = /R\$|reais/i.test(m[3] || '') ? 'R$' : /USD/i.test(m[3] || '') ? 'USD' : 'Gs';
-  const per = /no por persona/i.test(t) ? 'por noche' : /por persona|\bpp\b|per person|cada uno|each/i.test(t) ? 'por persona' : 'por noche';
-  return [`${n} ${cur}`, per];
+  if (/^gratis/i.test(t)) return {amt: 'Gratis', per: '', text: t};
+  let h = priceIn(t);
+  if (h) return Object.assign(h, {text: t});
+  for (const c of [...(p.pc || []), ...(p.comments || [])]) { h = priceIn(c.text); if (h) return Object.assign(h, {text: c.text, date: c.date, fromComment: true}); }
+  if (p.desc && (h = priceIn(p.desc))) return Object.assign(h, {text: p.desc, fromComment: true, date: 'descripción'});
+  if (/\b(?:gratis|gratuit\w*|free|no tuvimos que pagar|sin cargo|sin costo)\b/i.test(t)) return {amt: 'Gratis', per: '', text: t};
+  if (/^pago/i.test(t)) return {amt: 'Pago', per: 'sin monto', text: t};
+  if (/econ[oó]mico/i.test(t)) return {amt: 'Económico', per: 'sin monto', text: t};
+  return {amt: '—', per: 'sin dato', text: t};
+}
+const shortCost = p => { const x = priceOf(p); return [x.amt, x.per]; };
+const iov = p => p && p.guid ? `https://ioverlander.com/places/${p.guid}` : null;
+const SLEEP = new Set(['campsite', 'informal_campsite', 'wild_campsite', 'hostel', 'hotel', 'vehicle_storage']);
+// opciones para dormir: recomendada, alternativas y, después, los pernoctes que figuran como estacionamiento
+function sleepOpts(def){
+  const main = [...new Set([def.lodging, ...def.alts])].filter(x => x != null && PL[x]);
+  const more = [...new Set(def.park)].filter(x => PL[x] && SLEEP.has(PL[x].cat) && !main.includes(x));
+  return {main, more, all: main.concat(more)};
 }
 const stars = n => '★'.repeat(n || 0) + '☆'.repeat(5 - (n || 0));
 const money = (a, c) => a == null || a === '' ? '' : `${Number(a).toLocaleString('es-PY')} ${c || 'PYG'}`;
@@ -363,6 +411,7 @@ function render(){
   if (map) renderMap();
   renderWho();
   hydrateIcons();
+  enhanceScrollers();
 }
 function renderWho(){
   document.querySelectorAll('[data-who]').forEach(e => {
@@ -507,7 +556,7 @@ function renderStop(key){
   const inPlan = S.plan.stops.findIndex(s => s.key === key);
   const lg = r && prev ? leg(prev, r) : null;
   const ph = def.custom ? [PLACEHOLDER] : photos(key);
-  const lods = [def.lodging, ...def.alts].filter(x => x != null && PL[x]);
+  const so = sleepOpts(def), lods = so.all;
   const chosen = r ? (r.ck?.place_id ?? r.lodging) : def.lodging;
   const visits = S.checkins.filter(c => c.stop_key === key && !c.deleted).sort((a, b) => a.arrived < b.arrived ? 1 : -1);
   const label = def.name.split(' ·')[0].split(' (')[0];
@@ -538,21 +587,25 @@ function renderStop(key){
   if (lods.length) {
     h += `<div class="ps-h">${lods.length} opciones para dormir en <em>${esc(label)}</em> ${icon('down')}</div><div class="opts">`;
     lods.forEach(id => {
+      if (id === so.more[0]) h += `<div class="opts-sep">También para pasar la noche</div>`;
       const p = PL[id], ac = access(p), pc = shortCost(p);
       h += `<div class="opt ${id == chosen ? 'sel' : ''}" data-act="place" data-id="${id}" data-key="${esc(key)}">
         <div class="opt-b"><div class="opt-t">${esc(p.name)} ${id == def.lodging ? '<span class="badge">Recomendado</span>' : ''}${id == chosen ? '<span class="badge pink">Elegido</span>' : ''}</div>
           <div class="opt-m">${icon('shower')}${esc((AM.showers[p.amen?.showers] || ['Duchas ?'])[0])}<span class="sep">|</span><span class="tag ${ac[0]}" style="padding:2px 7px">${ac[1]}</span></div>
-          <div class="opt-d">${esc(CAT[p.cat] || '')}${p.n ? ` · ${p.n} check-ins iOverlander` : ''}${p.last ? ' · último ' + p.last : ''}</div></div>
+          <div class="opt-d">${so.more.includes(id) ? `<span class="badge grey">${esc(CAT[p.cat] || '')}</span> ` : esc(CAT[p.cat] || '')}${p.n ? ` · ${p.n} check-ins iOverlander` : ''}${p.last ? ' · último ' + p.last : ''}</div></div>
         <div class="opt-r"><span class="price">${esc(pc[0])}<small>${esc(pc[1])}</small></span>${icon('chev', 'chev')}</div></div>`;
     });
     h += '</div>';
   }
   if (def.attr.length) {
-    h += `<div class="ps-h">Qué visitar</div><div class="hs">${def.attr.filter(id => PL[id]).map(id => `<div class="hcard" data-act="place" data-id="${id}"><img src="${attrPhoto(id, key)}" alt="" loading="lazy"><div>${esc(PL[id].name)}<small>${esc(CAT[PL[id].cat] || '')}</small></div></div>`).join('')}</div>`;
+    const base = basePos(key);
+    h += `<div class="ps-h">Qué visitar</div><div class="small muted" style="margin:-6px 0 10px">Distancia en auto desde ${esc(base.name)}</div><div class="hs">${def.attr.filter(id => PL[id]).map(id => {
+      const q = PL[id], k = ck4(base.pos) + '>' + ck4(q);
+      return `<div class="hcard" data-act="place" data-id="${id}" data-key="${esc(key)}"><img src="${attrPhoto(id, key)}" alt="" loading="lazy"><div>${esc(q.name)}<small data-leg="${k}">${legTxt(legP(base.pos, q, true))}</small></div></div>`; }).join('')}</div>`;
   }
   const rowsH = [];
   if (def.uber) rowsH.push(`<div class="row">${icon('car')}<div class="rb">Uber / Bolt<small>${esc(def.uber)}</small></div></div>`);
-  def.park.filter(id => PL[id]).forEach(id => rowsH.push(`<div class="row" data-act="place" data-id="${id}">${icon('park')}<div class="rb">${esc(PL[id].name)}<small>Estacionar para visitar · ${esc(CAT[PL[id].cat] || '')}</small></div>${icon('chev', 'chev')}</div>`));
+  def.park.filter(id => PL[id] && !so.more.includes(id)).forEach(id => rowsH.push(`<div class="row" data-act="place" data-id="${id}">${icon('park')}<div class="rb">${esc(PL[id].name)}<small>Estacionar para visitar · ${esc(CAT[PL[id].cat] || '')}</small></div>${icon('chev', 'chev')}</div>`));
   def.onsite.forEach(o => rowsH.push(`<div class="row">${icon('wash')}<div class="rb">${esc(o[0])}<small>${esc(PL[o[1]]?.name || '')}</small></div></div>`));
   def.laundry.forEach(l => rowsH.push(`<a class="row" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lon}">${icon('wash')}<div class="rb">${esc(l.name)}<small>Lavandería · ${esc(l.src)}${l.note ? ' · ' + esc(l.note.slice(0, 90)) : ''}</small></div><span class="k">${l.km} km</span></a>`));
   if (!def.custom) { const p = r ? rowPos(r) : rowPos({def, lodging: def.lodging});
@@ -575,7 +628,7 @@ function renderStop(key){
   hydrateIcons($('#pg-stop'));
 
   const gal = $('#gal');
-  if (gal) gal.addEventListener('scroll', () => { const i = Math.round(gal.scrollLeft / gal.clientWidth); document.querySelectorAll('.ps-dots i').forEach((d, j) => d.classList.toggle('on', i === j)); }, {passive: true});
+  bindDots(gal, $('#pg-stop .ps-dots'));
   if (window.L) {
     if (mini) { mini.remove(); mini = null; }
     const p = r ? rowPos(r) : rowPos({def, lodging: def.lodging});
@@ -609,7 +662,7 @@ function renderCredits(){
   $('#pg-credits').innerHTML = `${topbar()}<div class="wrap"><h1 class="ps-t" style="font-size:32px;margin:10px 0 14px">Créditos y fuentes</h1>
   <div class="card small"><b>Datos de sitios:</b> base offline de iOverlander (1.795 lugares de Paraguay, comentarios hasta oct‑2026). Los costos salen del comentario más reciente con precio; en los hospedajes sugeridos se revisaron a mano. Rutas: OSRM / OpenStreetMap. Lavanderías y campings de Posadas: OpenStreetMap. Mapa: Esri. Las fotos de usuarios de iOverlander no se republican; cada ficha tiene el enlace para verlas en iOverlander.</div>
   <h2 class="sec-h">Fotografías (Wikimedia Commons)</h2>
-  ${Object.entries(C).map(([f, c]) => `<a class="cred" href="${esc(c.source)}" target="_blank" rel="noopener"><img src="assets/photos/th/${esc(f)}" alt="" loading="lazy"><div><b>${esc(c.file)}</b><br>${esc(c.author)} · ${esc(c.license)}</div></a>`).join('')}
+  ${Object.entries(C).map(([f, c]) => `<a class="cred" href="${esc(c.source)}" target="_blank" rel="noopener"><img src="${esc(c.th || 'assets/photos/th/' + f)}" alt="" loading="lazy"><div><b>${esc(c.file)}</b><br>${esc(c.author)} · ${esc(c.license)}</div></a>`).join('')}
   </div>${footerHTML()}`;
 }
 function footerHTML(){
@@ -665,9 +718,9 @@ function renderMap(){
     [d.lodging, ...d.alts].filter(x => x != null && x != r.lodging && PL[x] && !seen.has('l' + x)).forEach(x => { seen.add('l' + x);
       L.marker([PL[x].lat, PL[x].lon], {icon: mkIcon('alt', '⛺', 22)}).addTo(layers.alts).on('click', () => placeSheet(x, r.key)); });
     d.attr.filter(x => PL[x] && !seen.has('a' + x)).forEach(x => { seen.add('a' + x);
-      L.marker([PL[x].lat, PL[x].lon], {icon: mkIcon('at', '★', 22)}).addTo(layers.attr).on('click', () => placeSheet(x)); });
+      L.marker([PL[x].lat, PL[x].lon], {icon: mkIcon('at', '★', 22)}).addTo(layers.attr).on('click', () => placeSheet(x, r.key)); });
     d.park.filter(x => PL[x] && !seen.has('p' + x)).forEach(x => { seen.add('p' + x);
-      L.marker([PL[x].lat, PL[x].lon], {icon: mkIcon('pk', 'P', 20)}).addTo(layers.park).on('click', () => placeSheet(x)); });
+      L.marker([PL[x].lat, PL[x].lon], {icon: mkIcon(SLEEP.has(PL[x].cat) ? 'alt' : 'pk', SLEEP.has(PL[x].cat) ? '⛺' : 'P', SLEEP.has(PL[x].cat) ? 22 : 20)}).addTo(SLEEP.has(PL[x].cat) ? layers.alts : layers.park).on('click', () => placeSheet(x, r.key)); });
     d.laundry.forEach(l => { const k = 'w' + l.lat + l.lon; if (seen.has(k)) return; seen.add(k);
       L.marker([l.lat, l.lon], {icon: mkIcon('la', '🧺', 22)}).addTo(layers.laundry)
         .bindPopup(`<b>${esc(l.name)}</b><br><small>${esc(l.src)}</small><br><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lon}">Cómo llegar</a>`); });
@@ -684,27 +737,87 @@ function focusCard(i, scroll){
   if (scroll) { const el = document.querySelectorAll('.mcard')[i]; el && el.scrollIntoView({behavior: 'smooth', inline: 'center', block: 'nearest'}); }
 }
 
+/* ================================================================ carruseles */
+function bindDots(gal, dots){
+  if (!gal || !dots) return;
+  gal.addEventListener('scroll', () => { const i = Math.round(gal.scrollLeft / gal.clientWidth); dots.querySelectorAll('i').forEach((d, j) => d.classList.toggle('on', i === j)); }, {passive: true});
+}
+// en computador (mouse): flechas y arrastre; en el teléfono se desliza con el dedo como siempre
+const FINE = matchMedia('(hover: hover) and (pointer: fine)');
+let drag = null;
+window.addEventListener('pointermove', e => { if (!drag) return; const dx = e.clientX - drag.x0;
+  if (!drag.moved && Math.abs(dx) > 5) { drag.moved = true; drag.el.classList.add('dragging'); }
+  if (drag.moved) drag.el.scrollLeft = drag.s0 - dx; });
+window.addEventListener('pointerup', () => { if (!drag) return;
+  const el = drag.el, fwd = el.scrollLeft > drag.s0;
+  if (drag.moved) {
+    // al soltar, pasa al elemento siguiente o anterior según la dirección del arrastre
+    const pad = parseFloat(getComputedStyle(el).scrollPaddingLeft) || 0, x0 = el.getBoundingClientRect().left + pad;
+    const ds = [...el.children].map(c => c.getBoundingClientRect().left - x0);
+    const d = fwd ? ds.find(v => v > 1) : ds.filter(v => v < -1).pop();
+    el.classList.remove('dragging'); el.dataset.moved = 1; setTimeout(() => delete el.dataset.moved, 0);
+    if (d != null) el.scrollTo({left: el.scrollLeft + d, behavior: 'smooth'});
+  }
+  drag = null; });
+function enhanceScrollers(root = document){
+  if (!FINE.matches) return;
+  root.querySelectorAll('.stack, .ps-gal, .hs, .pills, .map-chips, .map-cards').forEach(el => {
+    if (el.dataset.sc) return; el.dataset.sc = 1;
+    const wrap = el.parentElement.classList.contains('sc-wrap') ? el.parentElement : null;
+    const host = wrap || (() => { const w = document.createElement('div'); w.className = 'sc-wrap' + (el.classList.contains('ps-gal') ? ' fill' : '') + (el.classList.contains('map-cards') ? ' over' : ''); el.before(w); w.append(el); return w; })();
+    const prev = Object.assign(document.createElement('button'), {className: 'sc-btn l', type: 'button', ariaLabel: 'Anterior', innerHTML: '‹'});
+    const next = Object.assign(document.createElement('button'), {className: 'sc-btn r', type: 'button', ariaLabel: 'Siguiente', innerHTML: '›'});
+    host.append(prev, next);
+    const step = () => el.classList.contains('ps-gal') ? el.clientWidth : Math.max(160, el.clientWidth * .8);
+    prev.onclick = e => { e.stopPropagation(); el.scrollBy({left: -step(), behavior: 'smooth'}); };
+    next.onclick = e => { e.stopPropagation(); el.scrollBy({left: step(), behavior: 'smooth'}); };
+    const upd = () => { const max = el.scrollWidth - el.clientWidth - 2; prev.hidden = el.scrollLeft <= 2; next.hidden = el.scrollLeft >= max; host.classList.toggle('noscroll', max <= 0); };
+    el.addEventListener('scroll', upd, {passive: true}); new ResizeObserver(upd).observe(el); upd();
+    // arrastrar con el mouse (los listeners de ventana son únicos, abajo)
+    el.addEventListener('pointerdown', e => { if (e.pointerType !== 'mouse' || e.button) return; drag = {el, x0: e.clientX, s0: el.scrollLeft, moved: false}; });
+    el.addEventListener('click', e => { if (el.dataset.moved) { e.stopPropagation(); e.preventDefault(); delete el.dataset.moved; } }, true);
+    el.addEventListener('dragstart', e => e.preventDefault());
+  });
+}
+
 /* ================================================================ hojas (bottom sheets) */
-function openSheet(title, html){ $('#sheet-t').textContent = title; $('#sheet-b').innerHTML = html; hydrateIcons($('#sheet-b')); $('#sheet-b').scrollTop = 0; $('#sheet').classList.add('on'); $('#scrim').classList.add('on'); }
+function openSheet(title, html){ $('#sheet-t').textContent = title; $('#sheet-b').innerHTML = html; hydrateIcons($('#sheet-b')); enhanceScrollers($('#sheet-b')); $('#sheet-b').scrollTop = 0; $('#sheet').classList.add('on'); $('#scrim').classList.add('on'); }
 function closeSheet(){ $('#sheet').classList.remove('on'); $('#scrim').classList.remove('on'); }
 
 function placeSheet(id, stopKey){
   const p = PL[id]; if (!p) return;
-  const ac = access(p), gm = `https://www.google.com/maps/dir/?api=1&destination=${p.lat},${p.lon}`, wz = `https://waze.com/ul?ll=${p.lat},${p.lon}&navigate=yes`;
+  const def = stopKey ? (DEF[stopKey] || T.rows.find(x => x.key === stopKey)?.def) : null;
+  const sleep = SLEEP.has(p.cat) && (!def || !def.attr.includes(id));
+  // atracciones y estacionamientos: ruta desde el hospedaje elegido de la parada
+  const base = def && !sleep ? basePos(stopKey) : null;
+  const dst = `${p.lat},${p.lon}`, org = base ? `${base.pos.lat},${base.pos.lon}` : '';
+  const gm = `https://www.google.com/maps/dir/?api=1${org ? '&origin=' + org : ''}&destination=${dst}&travelmode=driving`;
+  const wz = org ? `https://www.waze.com/live-map/directions?from=ll.${encodeURIComponent(org)}&to=ll.${encodeURIComponent(dst)}` : `https://waze.com/ul?ll=${dst}&navigate=yes`;
   const phn = p.phone ? p.phone.replace(/[^\d]/g, '') : '';
-  let h = `<div class="muted small">${esc(CAT[p.cat] || p.cat)}${p.city ? ' · ' + esc(p.city) : ''}${p.ext ? ' · Fuente: ' + esc(p.src) : ` · ${p.n} check-ins · último ${p.last || '—'}`}</div>
-    <div class="tags">${p.cat !== 'tourist_attraction' ? `<span class="tag ${ac[0]}">${ac[1]}</span>` : ''}${tags(p)}</div>
-    <div class="links"><a class="btn-pink" style="min-height:40px;padding:8px 16px;font-size:14.5px" href="${gm}" target="_blank" rel="noopener">Google Maps</a><a class="btn-line sm" href="${wz}" target="_blank" rel="noopener">Waze</a>
-      ${p.ext ? '' : `<a class="btn-line sm" href="https://www.ioverlander.com/places/${p.id}" target="_blank" rel="noopener">Fotos en iOverlander</a>`}
+  const gal = DATA.attrPhotos?.[id] || [];
+  let h = '';
+  if (gal.length) h += `<div class="sg"><div class="ps-gal">${gal.map(f => `<img src="${f}" alt="" loading="lazy">`).join('')}</div>
+    ${gal.length > 1 ? `<div class="ps-dots">${gal.map((_, i) => `<i class="${i ? '' : 'on'}"></i>`).join('')}</div>` : ''}</div>`;
+  h += `<div class="muted small">${esc(CAT[p.cat] || p.cat)}${p.city ? ' · ' + esc(p.city) : ''}${p.ext ? ' · Fuente: ' + esc(p.src) : ` · ${p.n} check-ins · último ${p.last || '—'}`}</div>
+    <div class="tags">${p.cat !== 'tourist_attraction' ? `<span class="tag ${access(p)[0]}">${access(p)[1]}</span>` : ''}${tags(p)}</div>`;
+  if (base) {
+    const k = ck4(base.pos) + '>' + ck4(p);
+    h += `<div class="route-box">${icon('car')}<div><b data-leg="${k}">${legTxt(legP(base.pos, p, true))}</b><small>en auto desde ${esc(base.name)}</small></div></div>`;
+  }
+  h += `<div class="links"><a class="btn-pink" style="min-height:40px;padding:8px 16px;font-size:14.5px" href="${gm}" target="_blank" rel="noopener">Google Maps</a><a class="btn-line sm" href="${wz}" target="_blank" rel="noopener">Waze</a>
+      ${iov(p) ? `<a class="btn-line sm" href="${iov(p)}">${icon('photo')}${p.cat === 'tourist_attraction' || !sleep ? 'Fotos en iOverlander' : 'Abrir en iOverlander'}</a>` : ''}
       ${phn ? `<a class="btn-line sm" href="https://wa.me/${phn}" target="_blank" rel="noopener">WhatsApp</a>` : ''}</div>`;
+  if (gal.length) h += `<div class="small muted" style="margin-top:-4px">Fotos: Wikimedia Commons (<a href="#/creditos" style="text-decoration:underline">créditos</a>). Las de los viajeros, en la app iOverlander.</div>`;
   if (stopKey) {
     const i = S.plan.stops.findIndex(s => s.key === stopKey);
     const row = T.rows.find(r => r.key === stopKey);
-    if (i >= 0 && row?.state === 'next' && S.plan.stops[i].lodging != id) h += `<button class="btn-pink block" data-act="uselod" data-i="${i}" data-id="${id}">Elegir para «${esc(DEF[stopKey].name.split(' ·')[0])}»</button>`;
+    if (sleep && i >= 0 && row?.state === 'next' && S.plan.stops[i].lodging != id) h += `<button class="btn-pink block" data-act="uselod" data-i="${i}" data-id="${id}">Elegir para «${esc(DEF[stopKey].name.split(' ·')[0])}»</button>`;
   }
   if (p.cat !== 'tourist_attraction') {
-    h += `<h4>💲 Costo más reciente</h4><div class="q p"><b>${esc(costTxt(p))}</b></div>`;
-    if (p.cur && p.cost?.date) h += `<div class="q"><span class="d">Comentario con precio · ${p.cost.date}</span><br>${esc(p.cost.text)}</div>`;
+    const pr = priceOf(p);
+    h += `<h4>💲 Costo más reciente</h4><div class="q p"><b>${esc(pr.fromComment ? `${pr.amt} ${pr.per}` : costTxt(p))}</b></div>`;
+    if (pr.fromComment) h += `<div class="q"><span class="d">Precio mencionado en un comentario · ${esc(pr.date || '')}</span><br>${esc(pr.text.length > 260 ? pr.text.slice(0, 260) + '…' : pr.text)}</div>`;
+    else if (p.cur && p.cost?.date) h += `<div class="q"><span class="d">Comentario con precio · ${p.cost.date}</span><br>${esc(p.cost.text)}</div>`;
     const ours = S.checkins.filter(c => c.place_id == id && c.cost_amount != null);
     ours.forEach(c => h += `<div class="q p"><span class="d">Pagado por ${esc(c.author || 'el grupo')} · ${c.arrived}</span><br>${money(c.cost_amount, c.cost_currency)} por noche</div>`);
     h += `<h4>🛣 Acceso sin 4x4</h4>`;
@@ -716,6 +829,7 @@ function placeSheet(id, stopKey){
   if (p.desc) h += `<h4>Descripción</h4><p style="margin:0;font-size:14.5px;line-height:1.55">${esc(p.desc)}</p>`;
   if (p.comments?.length) h += `<h4>Últimos comentarios en iOverlander</h4>` + p.comments.map(c => `<div class="q"><span class="d">${c.date}${c.veh ? ' · ' + esc(c.veh) : ''}</span><br>${esc(c.text)}</div>`).join('');
   openSheet(p.name, h);
+  bindDots($('#sheet-b .ps-gal'), $('#sheet-b .ps-dots'));
 }
 
 function needKey(){
@@ -736,7 +850,7 @@ function checkinSheet(stopKey, editId){
   const key = c ? c.stop_key : stopKey || (T.rows.find((r, i) => i > T.L && r.state === 'next') || T.rows[0]).key;
   const opts = T.rows.filter(r => r.state !== 'done' || r.key === key);
   const def = DEF[key];
-  const lods = def ? [def.lodging, ...def.alts].filter(x => x != null && PL[x]) : [];
+  const lods = def ? sleepOpts(def).all : [];
   const row = T.rows.find(r => r.key === key);
   const selPlace = c ? (c.place_id ?? 'other') : (row?.lodging ?? lods[0] ?? 'other');
   const other = selPlace === 'other';

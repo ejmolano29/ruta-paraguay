@@ -17,7 +17,7 @@ index.html            página única
 config.js             URL y clave pública de Supabase
 assets/app.js|css     interfaz y lógica (línea de tiempo, reajuste, check-ins, mapa)
 assets/data.js        datos generados: paradas, sitios iOverlander, rutas OSRM, fotos y créditos
-assets/photos/        fotos de Wikimedia Commons (1280 px) y th/ (miniaturas)
+assets/photos/        fotos de Wikimedia Commons (1280 px) y th/ (miniaturas); a/ = galerías de cada atracción
 supabase/schema.sql   tablas, seguridad y funciones
 tools/                scripts para regenerar datos y fotos
 ```
@@ -40,6 +40,8 @@ En el iPhone: abrir en Safari → Compartir → *Agregar a pantalla de inicio*.
 
 ## Uso
 
+- **iOverlander**: los botones abren la ficha en la app (enlace `ioverlander.com/places/<guid>`); sin la app, abre la web, que pide iniciar sesión.
+- **Qué visitar**: cada tarjeta muestra distancia y tiempo en auto desde el hospedaje elegido; Google Maps y Waze trazan la ruta desde ahí.
 - **+ (botón rosa)**: check-in en la próxima parada, o registrar salida si ya están en una.
 - **Plan → Editar noches y orden**: cambia la propuesta del grupo; el reajuste automático muestra `Ajustado 4→3` cuando tuvo que corregir.
 - Una parada planificada sin check-in, anterior al último check-in, se marca como *Omitida*.
@@ -50,6 +52,9 @@ En el iPhone: abrir en Safari → Compartir → *Agregar a pantalla de inicio*.
 ```
 python tools/build_data.py <scratch>   # sitios, costos, accesos, lavanderías y rutas (requiere la base offline de iOverlander)
 python tools/photos.py assets/photos tools/photos.json   # fotos de Wikimedia Commons (respeta límites)
+python tools/attr_photos.py cand <tmp>  # candidatas de fotos por atracción (revisar y elegir en tools/attr_photos.json → pick)
+python tools/attr_photos.py final       # baja las elegidas a assets/photos/a/
+python tools/visit_legs.py             # distancia y tiempo de cada hospedaje a cada atracción (OSRM)
 python tools/package.py                # genera assets/data.js
 ```
 

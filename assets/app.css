@@ -296,3 +296,26 @@ body.stop-open .tabbar{display:none}
 .xhero b{display:block;font-size:30px;font-weight:800;letter-spacing:-.6px;line-height:1.05}
 .cred{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:13px}
 .cred img{width:64px;height:48px;border-radius:8px;object-fit:cover;flex-shrink:0}
+
+/* opciones para dormir: separador de pernoctes */
+.opts-sep{font-size:12.5px;font-weight:800;color:var(--mut);text-transform:uppercase;letter-spacing:.5px;margin:10px 2px 0}
+/* ficha: galería de la atracción y ruta desde el hospedaje */
+.sg{position:relative;height:230px;border-radius:16px;overflow:hidden;margin:0 0 12px;background:#ddd}
+.sg .ps-dots{bottom:10px}
+.route-box{display:flex;gap:12px;align-items:center;background:#fdf0f5;border-radius:14px;padding:10px 14px;margin:12px 0 0}
+.route-box [data-icon]{font-size:22px;color:var(--pink)}
+.route-box b{display:block;font-size:16.5px}
+.route-box small{color:var(--ink2);font-size:13px}
+/* carruseles en computador: flechas y arrastre */
+.sc-wrap{position:relative}
+.sc-wrap.fill{height:100%}
+.sc-wrap.over{position:absolute;left:0;right:0;bottom:calc(var(--tab) + var(--bot) + 10px);z-index:600}
+.sc-wrap.over .map-cards{position:static}
+.sc-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.96);box-shadow:0 2px 10px rgba(0,0,0,.25);font-size:26px;line-height:1;padding-bottom:3px;cursor:pointer;display:grid;place-items:center;color:var(--ink);opacity:.9}
+.sc-btn:hover{opacity:1}
+.sc-btn.l{left:6px}.sc-btn.r{right:6px}
+.sc-wrap:has(>.pills) .sc-btn,.sc-wrap:has(>.map-chips) .sc-btn{width:28px;height:28px;font-size:19px}
+.sc-wrap.noscroll .sc-btn{display:none}
+.dragging{scroll-snap-type:none!important;cursor:grabbing;user-select:none}
+.dragging *{pointer-events:none}
+@media (hover:hover) and (pointer:fine){.stack,.ps-gal,.hs,.map-cards{cursor:grab}}

@@ -226,7 +226,7 @@ def pinfo(i):
         t = clean(es_c(c))
         if t: com.append(dict(date=c['when'][:10], text=t[:600], veh=((c.get('vehicle') or {}).get('vehicle_type') or '')))
     am = {k: v for k, v in (p['amenities'] or {}).items() if v != 'unknown'}
-    return dict(id=i, name=p['name'], cat=p['category'], lat=p['latitude'], lon=p['longitude'], city=p['city'] or '',
+    return dict(id=i, guid=p.get('guid'), name=p['name'], cat=p['category'], lat=p['latitude'], lon=p['longitude'], city=p['city'] or '',
                 desc=clean(ES.get(f"p.{i}.d") or p['description'])[:900], amen=am, phone=p.get('phone'), web=p.get('website'),
                 cost=latest_cost(p), road=road_notes(p), comments=com, n=len(cis), verified=(p['date_verified'] or '')[:10],
                 open=p['open'], last=cis[0]['when'][:10] if cis else '')
