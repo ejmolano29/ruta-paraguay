@@ -715,8 +715,8 @@ function footerHTML(){
 /* ================================================================ mapa */
 const TILE = 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}';
 let map, layers = {}, mapFitted = false, cardMarkers = [];
-const LAY = [['alts', 'Alternativas', '#8a8a90'], ['attr', 'Qué visitar', '#7b3fe4'], ['laundry', 'Lavanderías', '#0a7ea4'], ['park', 'Estacionar', '#4a5560']];
-const vis = ls.get('pm-layers', {alts: false, attr: true, laundry: false, park: false});
+const LAY = [['alts', 'Alternativas', '#8a8a90'], ['attr', 'Qué visitar', '#7b3fe4'], ['laundry', 'Lavanderías', '#0a7ea4'], ['pets', 'Pet shops', '#d9480f'], ['park', 'Estacionar', '#4a5560']];
+const vis = Object.assign({alts: false, attr: true, laundry: false, pets: true, park: false}, ls.get('pm-layers', {}));
 function initMap(){
   if (map || !window.L) return;
   map = L.map('map', {zoomControl: false}).setView([-25.3, -57], 6);
@@ -760,6 +760,8 @@ function renderMap(){
     d.laundry.forEach(l => { const k = 'w' + l.lat + l.lon; if (seen.has(k)) return; seen.add(k);
       L.marker([l.lat, l.lon], {icon: mkIcon('la', '🧺', 22)}).addTo(layers.laundry)
         .bindPopup(`<b>${esc(l.name)}</b><br><small>${esc(l.src)}</small><br><a target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lon}">Cómo llegar</a>`); });
+    (d.pets || []).forEach((q, j) => { const k = 'g' + q.lat + q.lon; if (seen.has(k)) return; seen.add(k);
+      L.marker([q.lat, q.lon], {icon: mkIcon('pet', '🐾', 22)}).addTo(layers.pets).on('click', () => petSheet(r.key, j)); });
   });
   LAY.forEach(([k]) => vis[k] ? layers[k].addTo(map) : layers[k].remove());
   $('#map-cards').innerHTML = cardMarkers.map(c => { const r = T.rows.find(x => x.key === c.key);

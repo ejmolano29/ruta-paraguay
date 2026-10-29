@@ -223,6 +223,7 @@ svg{display:block}
 .mk.alt{background:#fff;color:var(--ink);border-color:var(--mut);font-size:11px}
 .mk.at{background:#7b3fe4;font-size:11px}
 .mk.la{background:#0a7ea4;font-size:11px}
+.mk.pet{background:#d9480f;font-size:11px}
 .mk.pk{background:#4a5560;border-radius:6px;font-size:11px}
 .leaflet-container{font-family:Figtree,system-ui,sans-serif}
 
