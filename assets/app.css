@@ -194,6 +194,7 @@ svg{display:block}
 .row .rb{flex:1;min-width:0}
 .row small{display:block;color:var(--mut);font-size:12.5px;line-height:1.35}
 .row .k{color:var(--mut);font-size:13px;white-space:nowrap}
+.row small b.ok{color:var(--ok)}.row small b.bad{color:var(--bad)}
 .ps-cta{position:fixed;left:0;right:0;bottom:0;z-index:20;padding:12px 20px calc(12px + var(--bot));background:linear-gradient(180deg,rgba(255,255,255,0),#fff 30%);display:none}
 .ps-cta.on{display:block}
 .planbox{border:1px dashed var(--line);border-radius:14px;padding:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}

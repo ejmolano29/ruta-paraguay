@@ -46,6 +46,7 @@ const IC = {
   edit:'<path d="M4 20h4L19 9l-4-4L4 16z"/>', trash:'<path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13"/>',
   fit:'<path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/>', alert:'<path d="M12 3 2 20h20z"/><path d="M12 10v4M12 17h.01"/>',
   info:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5h.01"/>', key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M16 7l3 3"/>',
+  paw:'<circle cx="5.5" cy="10" r="1.8"/><circle cx="9.5" cy="5.5" r="1.8"/><circle cx="14.5" cy="5.5" r="1.8"/><circle cx="18.5" cy="10" r="1.8"/><path d="M12 11c-3 0-5.5 4-5.5 6.5 0 1.5 1.2 2.5 2.7 2.5 1 0 1.8-.5 2.8-.5s1.8.5 2.8.5c1.5 0 2.7-1 2.7-2.5C17.5 15 15 11 12 11z"/>',
   camp:'<path d="M3 20 12 4l9 16z"/><path d="M12 20l-3.5-6h7z"/>', photo:'<path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/>', sync:'<path d="M20 11a8 8 0 0 0-14-4.5L4 9M4 13a8 8 0 0 0 14 4.5L20 15"/><path d="M4 4v5h5M20 20v-5h-5"/>',
 };
 const icon = (n, cls='') => `<span data-icon class="${cls}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">${IC[n]||''}</svg></span>`;
@@ -305,6 +306,35 @@ function basePos(stopKey){
   const pos = r ? rowPos(r) : rowPos({def, lodging: def.lodging});
   const id = r ? (r.ck ? r.ck.place_id : r.lodging) : def.lodging;
   return {pos, name: r?.ck?.place_name || PL[id]?.name || def.name};
+}
+
+/* ================================================================ horarios (pet shops) */
+// hours: 7 elementos lunes..domingo, cada uno con tramos "HH:MM-HH:MM" ([] cerrado, null sin dato)
+const brandTxt = q => q.brands?.length ? q.brands.join(', ') : 'Marca premium sin confirmar';
+const DIAS = ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'];
+const hhmm = t => t.replace(/^0(\d)/, '$1');
+const dayTxt = d => d == null ? 'sin dato' : !d.length ? 'cerrado' : d[0] === '00:00-24:00' ? '24 h' : d.map(t => t.split('-').map(hhmm).join('–')).join(' y ');
+function hoursTxt(h){
+  if (!h) return '';
+  const g = [];
+  h.forEach((d, i) => { const t = dayTxt(d); if (g.length && g[g.length-1].t === t) g[g.length-1].b = i; else g.push({a: i, b: i, t}); });
+  return g.map(x => `${DIAS[x.a]}${x.b > x.a ? (x.b > x.a + 1 ? '–' : ', ') + DIAS[x.b] : ''} ${x.t}`).join(' · ');
+}
+// hora local de Paraguay (UTC−3 todo el año); Posadas usa la misma hora
+function openNow(h){
+  if (!h) return null;
+  const p = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {timeZone: 'America/Asuncion', weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23'}).formatToParts(new Date()).map(x => [x.type, x.value]));
+  const i = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].indexOf(p.weekday), now = p.hour + ':' + p.minute, d = h[i];
+  if (d == null) return null;
+  const on = d.find(t => { const [a, b] = t.split('-'); return now >= a && now < b; });
+  if (on) return {open: true, txt: on === '00:00-24:00' ? 'Abierto 24 h' : 'Abierto · cierra ' + hhmm(on.split('-')[1])};
+  const nx = d.find(t => t.split('-')[0] > now);
+  if (nx) return {open: false, txt: 'Cerrado · abre a las ' + hhmm(nx.split('-')[0])};
+  for (let j = 1; j < 7; j++) {   // próximo día con horario
+    const dj = h[(i + j) % 7];
+    if (dj?.length) return {open: false, txt: `Cerrado · abre ${j === 1 ? 'mañana' : 'el ' + DIAS[(i + j) % 7].toLowerCase()} a las ${hhmm(dj[0].split('-')[0])}`};
+  }
+  return {open: false, txt: 'Cerrado'};
 }
 
 /* ================================================================ etiquetas de sitios */
@@ -607,10 +637,16 @@ function renderStop(key){
   if (def.uber) rowsH.push(`<div class="row">${icon('car')}<div class="rb">Uber / Bolt<small>${esc(def.uber)}</small></div></div>`);
   def.park.filter(id => PL[id] && !so.more.includes(id)).forEach(id => rowsH.push(`<div class="row" data-act="place" data-id="${id}">${icon('park')}<div class="rb">${esc(PL[id].name)}<small>Estacionar para visitar · ${esc(CAT[PL[id].cat] || '')}</small></div>${icon('chev', 'chev')}</div>`));
   def.onsite.forEach(o => rowsH.push(`<div class="row">${icon('wash')}<div class="rb">${esc(o[0])}<small>${esc(PL[o[1]]?.name || '')}</small></div></div>`));
-  def.laundry.forEach(l => rowsH.push(`<a class="row" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${l.lat},${l.lon}">${icon('wash')}<div class="rb">${esc(l.name)}<small>Lavandería · ${esc(l.src)}${l.note ? ' · ' + esc(l.note.slice(0, 90)) : ''}</small></div><span class="k">${l.km} km</span></a>`));
+  const bp = basePos(key);
+  def.laundry.forEach(l => rowsH.push(`<a class="row" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1${bp ? `&origin=${bp.pos.lat},${bp.pos.lon}` : ''}&destination=${l.lat},${l.lon}">${icon('wash')}<div class="rb">${esc(l.name)}<small>Lavandería · ${esc(l.src)}${l.note ? ' · ' + esc(l.note.slice(0, 90)) : ''}</small></div>${bp ? `<span class="k" data-leg="${ck4(bp.pos)}>${ck4(l)}">${legTxt(legP(bp.pos, l, true))}</span>` : ''}</a>`));
   if (!def.custom) { const p = r ? rowPos(r) : rowPos({def, lodging: def.lodging});
     rowsH.push(`<a class="row" target="_blank" rel="noopener" href="https://www.google.com/maps/search/lavanderia/@${p.lat},${p.lon},14z">${icon('wash')}<div class="rb">Buscar más lavanderías<small>Google Maps alrededor del hospedaje</small></div>${icon('chev', 'chev')}</a>`); }
   if (rowsH.length) h += `<div class="ps-h">Servicios cerca</div><div class="rows">${rowsH.join('')}</div>`;
+  if (def.pets?.length && bp) {
+    h += `<div class="ps-h">Pet shops · comida premium para gatos</div><div class="small muted" style="margin:-6px 0 10px">Distancia en auto desde ${esc(bp.name)}</div><div class="rows">${def.pets.map((q, i) => [q, i, legP(bp.pos, q, true)]).sort((x, y) => x[2].km - y[2].km).map(([q, i, lg]) => {   // más cercano primero desde el sitio elegido
+      const on = openNow(q.hours);
+      return `<div class="row" data-act="pet" data-key="${esc(key)}" data-i="${i}">${icon('paw')}<div class="rb">${esc(q.name)}<small>${on ? `<b class="${on.open ? 'ok' : 'bad'}">${on.txt}</b> · ` : ''}${esc(brandTxt(q))}</small><small>🕘 ${esc(hoursTxt(q.hours))}</small><small data-leg="${ck4(bp.pos)}>${ck4(q)}">${legTxt(lg)}</small></div>${icon('chev', 'chev')}</div>`; }).join('')}</div>`;
+  }
 
   if (inPlan >= 0 && r && r.state === 'next') {
     h += `<div class="ps-h">Ajustar el plan</div><div class="planbox">
@@ -832,6 +868,22 @@ function placeSheet(id, stopKey){
   bindDots($('#sheet-b .ps-gal'), $('#sheet-b .ps-dots'));
 }
 
+function petSheet(stopKey, i){
+  const def = DEF[stopKey], q = def?.pets?.[i]; if (!q) return;
+  const base = basePos(stopKey), dst = `${q.lat},${q.lon}`, org = `${base.pos.lat},${base.pos.lon}`, k = ck4(base.pos) + '>' + ck4(q);
+  const on = openNow(q.hours), phn = q.phone ? q.phone.replace(/[^\d]/g, '') : '';
+  const wa = /^09\d{8}$/.test(phn) ? '595' + phn.slice(1) : /^5959\d{8}$/.test(phn) ? phn : '';   // solo celulares de Paraguay
+  let h = `<div class="muted small">Pet shop${q.addr ? ' · ' + esc(q.addr) : ''}${q.rating ? ` · ${String(q.rating).replace('.', ',')} ★ (${q.reviews}) en Google Maps` : ''}</div>
+    <div class="route-box">${icon('car')}<div><b data-leg="${k}">${legTxt(legP(base.pos, q, true))}</b><small>en auto desde ${esc(base.name)}</small></div></div>
+    <div class="links"><a class="btn-pink" style="min-height:40px;padding:8px 16px;font-size:14.5px" href="https://www.google.com/maps/dir/?api=1&origin=${org}&destination=${dst}&travelmode=driving" target="_blank" rel="noopener">Google Maps</a><a class="btn-line sm" href="https://www.waze.com/live-map/directions?from=ll.${encodeURIComponent(org)}&to=ll.${encodeURIComponent(dst)}" target="_blank" rel="noopener">Waze</a>
+      ${wa ? `<a class="btn-line sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">WhatsApp</a>` : phn ? `<a class="btn-line sm" href="tel:${esc(q.phone.replace(/[^\d+]/g, ''))}">Llamar</a>` : ''}${q.web ? `<a class="btn-line sm" href="${esc(q.web)}" target="_blank" rel="noopener">Sitio web</a>` : ''}</div>
+    <h4>🕘 Horario de atención</h4>${on ? `<div class="q ${on.open ? 'p' : 'r'}"><b>${on.txt}</b></div>` : ''}
+    <div class="q">${(q.hours || []).map((d, j) => `${DIAS[j]}: ${dayTxt(d)}`).join('<br>')}</div>
+    <h4>🐱 Comida premium para gatos</h4><div class="q p"><b>${esc(brandTxt(q))}</b></div><div class="q"><span class="d">${q.ver === 'web' ? 'Comprobado' : q.ver === 'maps' ? 'Comprobado en Google Maps' : 'Según Google Maps (sin comprobar la marca)'}</span><br>${esc(q.evid)}</div>
+    ${q.phone ? `<div class="small muted">Teléfono: ${esc(q.phone)}</div>` : ''}<div class="small muted" style="margin-top:6px">Horarios de Google Maps: conviene confirmar por teléfono o WhatsApp antes de ir.</div>`;
+  openSheet(q.name, h);
+}
+
 function needKey(){
   if (S.me.name && (!S.remote || S.me.pass)) return false;
   meSheet(S.remote ? 'Para hacer check-in compartido ingresa tu nombre y la clave del viaje.' : 'Antes del primer check-in, dinos quién eres.');
@@ -897,6 +949,7 @@ document.addEventListener('click', async e => {
     case 'back': history.length > 1 ? history.back() : (location.hash = '#/'); break;
     case 'open': location.hash = '#/p/' + encodeURIComponent(ds.key); break;
     case 'place': e.preventDefault(); placeSheet(+ds.id, ds.key); break;
+    case 'pet': petSheet(ds.key, +ds.i); break;
     case 'checkin': checkinSheet(ds.key); break;
     case 'checkout': checkoutSheet(ds.id); break;
     case 'editck': checkinSheet(null, ds.id); break;

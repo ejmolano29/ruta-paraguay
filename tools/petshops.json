@@ -1,0 +1,1489 @@
+{
+ "cde": [
+  {
+   "name": "Mascotas & CIA",
+   "lat": -25.5115538,
+   "lon": -54.6347332,
+   "addr": "Km 3,5, Av. Itaipú, Arena Shopping, Ciudad del Este",
+   "phone": "0985 337071",
+   "web": "https://mascotas.com.py/",
+   "rating": 4.7,
+   "reviews": 256,
+   "hours": [
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "N&D",
+    "Premier",
+    "Excellent",
+    "Vet Life"
+   ],
+   "ver": "web",
+   "evid": "Tienda online mascotas.com.py, Gatos > Balanceado seco: Pro Plan Cat Urinary/Sterilized, N&D Prime Feline, Premier Cat, Excellent Cat Urinary, Vet Life Cat. Royal Canin online solo aparece en líneas para perro",
+   "km_recta": 1.84
+  },
+  {
+   "name": "AGROFIELD - Ciudad del Este",
+   "lat": -25.5090024,
+   "lon": -54.6391658,
+   "addr": "Av. Mariscal Francisco Solano López, Ciudad del Este",
+   "phone": "0985 931316",
+   "web": "https://www.agrofield.com.py/",
+   "rating": 4.6,
+   "reviews": 76,
+   "hours": [
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-13:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Royal Canin",
+    "Pro Plan",
+    "Excellent",
+    "Old Prince",
+    "Origens",
+    "Equilibrio"
+   ],
+   "ver": "web",
+   "evid": "Tienda online agrofield.com.py (sucursal: Agrofield Ciudad del Este), categoría Alimentos gatos: RC Feline Senior Ageing +12, RC Vet Diet Diabetic gato, Pro Plan Adult/Urinary Cat, Excellent Cat, Old Prince gato, Origens, Equilibrio gato",
+   "km_recta": 2.3
+  },
+  {
+   "name": "Mascotas y Cia. Sucursal Country",
+   "lat": -25.4812779,
+   "lon": -54.6231116,
+   "addr": "Edif. Brisas del Este, calle Agustín Pío Barrios esq. Luis Alberto del Paraná (Paraná Country Club), Hernandarias",
+   "phone": "0983 108980",
+   "web": "https://mascotas.com.py/",
+   "rating": 5.0,
+   "reviews": 151,
+   "hours": [
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "N&D",
+    "Premier",
+    "Excellent",
+    "Vet Life"
+   ],
+   "ver": "web",
+   "evid": "Sucursal de la cadena Mascotas y Cia; su web mascotas.com.py la lista como sucursal Paraná Country Club y su catálogo de gatos incluye Pro Plan, N&D Prime Feline, Premier, Excellent y Vet Life (el catálogo es de la cadena, no indica stock por sucursal)",
+   "km_recta": 5.04
+  }
+ ],
+ "hern": [
+  {
+   "name": "Unipets",
+   "lat": -25.4083882,
+   "lon": -54.6294298,
+   "addr": "Concejal César Espínola, Hernandarias",
+   "phone": "0972 398644",
+   "web": "https://www.instagram.com/unipetspy/",
+   "rating": 5.0,
+   "reviews": 15,
+   "hours": [
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan"
+   ],
+   "ver": "web",
+   "evid": "Instagram @unipetspy (Hernandarias): publicación promocionando Purina Pro Plan Urinary para gatos (visto en el extracto de Google). La web de la ficha de Maps es linktr.ee/unipets",
+   "km_recta": 2.18
+  },
+  {
+   "name": "Mascotas y Cia. Sucursal Country",
+   "lat": -25.4812779,
+   "lon": -54.6231116,
+   "addr": "Edif. Brisas del Este, calle Agustín Pío Barrios esq. Luis Alberto del Paraná (Paraná Country Club), Hernandarias",
+   "phone": "0983 108980",
+   "web": "https://mascotas.com.py/",
+   "rating": 5.0,
+   "reviews": 151,
+   "hours": [
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    [
+     "07:30-17:30"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "N&D",
+    "Premier",
+    "Excellent",
+    "Vet Life"
+   ],
+   "ver": "web",
+   "evid": "Sucursal de Mascotas y Cia; su web mascotas.com.py la lista como sucursal Paraná Country Club y su catálogo de gatos incluye Pro Plan, N&D Prime Feline, Premier, Excellent y Vet Life (catálogo de la cadena). También aparece al buscar 'royal canin Hernandarias' en Maps",
+   "km_recta": 10.13
+  },
+  {
+   "name": "AGROFIELD - Ciudad del Este",
+   "lat": -25.5090024,
+   "lon": -54.6391658,
+   "addr": "Av. Mariscal Francisco Solano López, Ciudad del Este",
+   "phone": "0985 931316",
+   "web": "https://www.agrofield.com.py/",
+   "rating": 4.6,
+   "reviews": 76,
+   "hours": [
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-18:00"
+    ],
+    [
+     "08:00-13:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Royal Canin",
+    "Pro Plan",
+    "Excellent",
+    "Old Prince",
+    "Origens",
+    "Equilibrio"
+   ],
+   "ver": "web",
+   "evid": "Tienda online agrofield.com.py, categoría Alimentos gatos: Royal Canin Feline y Vet Diet gato, Pro Plan Cat, Excellent, Old Prince, Origens, Equilibrio. Está en Ciudad del Este (no se encontró una tercera tienda verificable en Hernandarias)",
+   "km_recta": 13.33
+  }
+ ],
+ "yguazu": [
+  {
+   "name": "Veterinaria María Auxiliadora",
+   "lat": -25.4656603,
+   "lon": -54.9974284,
+   "addr": "G2M3+P2, Yguazú",
+   "phone": "0972 862677",
+   "web": "https://m.facebook.com/veterinaria.maria.aux/",
+   "rating": 4.9,
+   "reviews": 9,
+   "hours": [
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-17:00"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Es el primer resultado en Google Maps al buscar 'royal canin Yguazú Paraguay', y también sale con 'alimento para gatos Yguazú'. No se encontró ninguna marca concreta en web, Facebook ni reseñas",
+   "km_recta": 0.44
+  }
+ ],
+ "indep": [
+  {
+   "name": "Agroveterinaria Independencia",
+   "lat": -25.7052471,
+   "lon": -56.1827875,
+   "addr": "Planta Urbana (7RV8+WV), Colonia Independencia",
+   "phone": "0984 301693",
+   "web": null,
+   "rating": 4.5,
+   "reviews": 47,
+   "hours": [
+    [
+     "07:00-17:00"
+    ],
+    [
+     "07:00-17:00"
+    ],
+    [
+     "07:00-17:00"
+    ],
+    [
+     "07:00-17:00"
+    ],
+    [
+     "07:00-17:00"
+    ],
+    [
+     "07:00-12:00"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "En Google Maps la búsqueda 'royal canin Independencia Guairá' abre directamente esta ficha (tienda de productos para mascotas). Además, el buscador oficial de tiendas de vitalcan.com.py la lista como punto de venta (AGROVET. INDEPENDENCIA, Colonia Independencia), aunque sin decir qué línea de Vitalcan vende. El teléfono sale de ese listado; la ficha de Maps no tiene teléfono",
+   "km_recta": 3.33
+  }
+ ],
+ "asu1": [
+  {
+   "name": "Almacén de Mascotas",
+   "lat": -25.2719479,
+   "lon": -57.5651978,
+   "addr": "Julio Correa, Asunción (barrio Mburucuyá)",
+   "phone": "0983 787684",
+   "web": "https://www.almacendemascotas.com.py/",
+   "rating": 4.5,
+   "reviews": 48,
+   "hours": [
+    [
+     "08:30-20:00"
+    ],
+    [
+     "08:30-20:00"
+    ],
+    [
+     "08:30-20:00"
+    ],
+    [
+     "08:30-20:00"
+    ],
+    [
+     "08:30-20:00"
+    ],
+    [
+     "08:30-20:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "N&D",
+    "Excellent",
+    "Origens",
+    "Formula Natural",
+    "Royal Canin"
+   ],
+   "ver": "web",
+   "evid": "Tienda online almacendemascotas.com.py (categoría Gatos): N&D Prime Felino Castrado 7,5 kg, Excellent Cat Urinary 1 kg, Origens Gatos Castrados 10 kg, Pro Plan paté gato; Royal Canin como marca destacada",
+   "km_recta": 0.38
+  },
+  {
+   "name": "Marpet",
+   "lat": -25.274193,
+   "lon": -57.5688693,
+   "addr": "Av. Dr. Felipe Molas López, Asunción",
+   "phone": "0986 141413",
+   "web": "https://marpet.com.py/",
+   "rating": 4.6,
+   "reviews": 132,
+   "hours": [
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Royal Canin",
+    "N&D",
+    "Taste of the Wild",
+    "Biofresh"
+   ],
+   "ver": "web",
+   "evid": "Tienda online marpet.com.py, colección 'Alimento gatos': Royal Canin (Gatito, Sterilised, línea Vet Renal/Urinary), N&D Prime gato castrado, Taste of the Wild gato (Canyon River, Rocky Mountain), Biofresh gato castrado",
+   "km_recta": 0.64
+  },
+  {
+   "name": "4Pets Park - Trinidad",
+   "lat": -25.274396,
+   "lon": -57.5562845,
+   "addr": "Av. Santísima Trinidad 630, Asunción",
+   "phone": "0971 878999",
+   "web": "https://www.4pets.com.py/",
+   "rating": 4.7,
+   "reviews": 42,
+   "hours": [
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "10:00-18:00"
+    ]
+   ],
+   "brands": [
+    "Hill's",
+    "Biofresh",
+    "Royal Canin",
+    "Pro Plan",
+    "Premier"
+   ],
+   "ver": "web",
+   "evid": "Tienda online app.4pets.com.py (cadena 4Pets): Hill's Gatos Adultos Hairball Control y Biofresh Gatos Adultos; además Royal Canin, Pro Plan y Premier (estos vistos en líneas de perro)",
+   "km_recta": 1.21
+  }
+ ],
+ "areg": [
+  {
+   "name": "Agrofield - Shopping Pinedo",
+   "lat": -25.3240384,
+   "lon": -57.5199043,
+   "addr": "Shopping Pinedo, San Lorenzo",
+   "phone": "(021) 729 4545",
+   "web": "https://www.agrofield.com.py/",
+   "rating": 4.5,
+   "reviews": 116,
+   "hours": [
+    [
+     "09:00-21:00"
+    ],
+    [
+     "09:00-21:00"
+    ],
+    [
+     "09:00-21:00"
+    ],
+    [
+     "09:00-21:00"
+    ],
+    [
+     "09:00-21:00"
+    ],
+    [
+     "09:00-21:00"
+    ],
+    [
+     "10:00-21:00"
+    ]
+   ],
+   "brands": [
+    "Royal Canin",
+    "Pro Plan",
+    "Excellent",
+    "Equilibrio",
+    "Origens",
+    "Old Prince"
+   ],
+   "ver": "web",
+   "evid": "Tienda online agrofield.com.py, categoría Alimentos para Gatos: Pro Plan Adult Cat 3 kg y Urinary Cat, Excellent Cat Adult, Equilibrio gato y Veterinary, Origens Gatos Filhotes, Old Prince gato; Royal Canin en filtro de marcas (catálogo de la cadena, no de la sucursal)",
+   "km_recta": 13.72
+  },
+  {
+   "name": "Agrofield - Loma Pyta",
+   "lat": -25.2414854,
+   "lon": -57.5435096,
+   "addr": "Ruta Transchaco 2238, Asunción",
+   "phone": "(021) 729 4545",
+   "web": "https://www.agrofield.com.py/",
+   "rating": 4.4,
+   "reviews": 99,
+   "hours": [
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    [
+     "07:30-12:30"
+    ],
+    []
+   ],
+   "brands": [
+    "Royal Canin",
+    "Pro Plan",
+    "Excellent",
+    "Equilibrio",
+    "Origens",
+    "Old Prince"
+   ],
+   "ver": "web",
+   "evid": "Tienda online agrofield.com.py, categoría Alimentos para Gatos: Pro Plan Adult Cat 3 kg y Urinary Cat, Excellent Cat Adult, Equilibrio gato y Veterinary, Origens Gatos Filhotes, Old Prince gato; Royal Canin en filtro de marcas (catálogo de la cadena, no de la sucursal)",
+   "km_recta": 17.44
+  },
+  {
+   "name": "4Pets Park - Trinidad",
+   "lat": -25.274396,
+   "lon": -57.5562845,
+   "addr": "Av. Santísima Trinidad 630, Asunción",
+   "phone": "0971 878999",
+   "web": "https://www.4pets.com.py/",
+   "rating": 4.7,
+   "reviews": 42,
+   "hours": [
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "09:00-20:00"
+    ],
+    [
+     "10:00-18:00"
+    ]
+   ],
+   "brands": [
+    "Hill's",
+    "Biofresh",
+    "Royal Canin",
+    "Pro Plan",
+    "Premier"
+   ],
+   "ver": "web",
+   "evid": "Tienda online app.4pets.com.py (cadena 4Pets): Hill's Gatos Adultos Hairball Control y Biofresh Gatos Adultos; además Royal Canin, Pro Plan y Premier (estos vistos en líneas de perro)",
+   "km_recta": 17.56
+  }
+ ],
+ "sanber": [
+  {
+   "name": "GATUNA 2.0",
+   "lat": -25.357727,
+   "lon": -57.2734098,
+   "addr": "Puerta del Lago, San Bernardino",
+   "phone": "0976 150001",
+   "web": null,
+   "rating": null,
+   "reviews": 0,
+   "hours": [
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Ficha 'Tienda de productos para mascotas' que aparece al buscar 'royal canin' en Google Maps alrededor de San Bernardino; sin reseñas ni web",
+   "km_recta": 5.04
+  },
+  {
+   "name": "Veterinaria Mara",
+   "lat": -25.3846871,
+   "lon": -57.1453393,
+   "addr": "Intendente Ortiz, Caacupé",
+   "phone": "0985 954843",
+   "web": null,
+   "rating": 4.8,
+   "reviews": 177,
+   "hours": [
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "sin-confirmar",
+   "evid": "Figura como 'VET. MARA - CAACUPE' (tel. 0985954843, el mismo de la ficha) en el buscador de tiendas de vitalcan.com.py; no se pudo confirmar que tenga la línea premium para gato Vitalcan también tiene líneas económicas: confirmar que tengan la premium.",
+   "km_recta": 16.58
+  }
+ ],
+ "cord": [
+  {
+   "name": "Área Pet Caacupé",
+   "lat": -25.3790218,
+   "lon": -57.1408721,
+   "addr": "Ruta Caacupé - Tobatí, Caacupé",
+   "phone": "0962 349806",
+   "web": null,
+   "rating": null,
+   "reviews": 0,
+   "hours": [
+    [
+     "08:00-16:30"
+    ],
+    [
+     "08:00-16:30"
+    ],
+    [
+     "08:00-16:30"
+    ],
+    [
+     "08:00-16:30"
+    ],
+    [
+     "08:00-16:30"
+    ],
+    [
+     "08:00-12:00"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Ficha 'Tienda de productos para mascotas' que aparece al buscar 'royal canin Caacupé' y 'pet shop Caacupé' en Google Maps; mismo punto que Pykasu Caacupé",
+   "km_recta": 7.23
+  },
+  {
+   "name": "Veterinaria Mara",
+   "lat": -25.3846871,
+   "lon": -57.1453393,
+   "addr": "Intendente Ortiz, Caacupé",
+   "phone": "0985 954843",
+   "web": null,
+   "rating": 4.8,
+   "reviews": 177,
+   "hours": [
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    [
+     "07:30-17:00"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "sin-confirmar",
+   "evid": "Figura como 'VET. MARA - CAACUPE' (tel. 0985954843, el mismo de la ficha) en el buscador de tiendas de vitalcan.com.py; no se pudo confirmar que tenga la línea premium para gato Vitalcan también tiene líneas económicas: confirmar que tengan la premium.",
+   "km_recta": 7.67
+  }
+ ],
+ "yag": [
+  {
+   "name": "Agroveterinaria San Buenaventura",
+   "lat": -25.561201,
+   "lon": -57.2833086,
+   "addr": "Ruta Yaguarón - Pirayú, Yaguarón",
+   "phone": "0982 564690",
+   "web": null,
+   "rating": 4.6,
+   "reviews": 58,
+   "hours": [
+    [
+     "07:00-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:00-18:00"
+    ],
+    [
+     "07:30-12:00"
+    ]
+   ],
+   "brands": [],
+   "ver": "sin-confirmar",
+   "evid": "Figura como 'AGROVET. SAN BUENAVENTURA', Dr. Francia esq. Leonismo Yaguaronino (tel. 0982564690, el mismo de la ficha), en el buscador de tiendas de vitalcan.com.py; no se pudo confirmar la línea premium para gato Vitalcan también tiene líneas económicas: confirmar que tengan la premium.",
+   "km_recta": 2.27
+  },
+  {
+   "name": "Agroveterinaria Paraguarí",
+   "lat": -25.6217632,
+   "lon": -57.1520818,
+   "addr": "9RHX+75V, Paraguarí",
+   "phone": "0531 432 601",
+   "web": null,
+   "rating": 4.5,
+   "reviews": 184,
+   "hours": [
+    [
+     "06:30-17:45"
+    ],
+    [
+     "06:30-17:45"
+    ],
+    [
+     "06:30-17:45"
+    ],
+    [
+     "06:30-17:45"
+    ],
+    [
+     "06:30-17:45"
+    ],
+    [
+     "06:30-17:45"
+    ],
+    [
+     "08:00-10:45"
+    ]
+   ],
+   "brands": [],
+   "ver": "sin-confirmar",
+   "evid": "Figura como 'AGROVETERINARIA PARAGUARI', Paraguarí, en el buscador de tiendas de vitalcan.com.py (con otro teléfono, 0976392963); no se pudo confirmar la línea premium para gato Vitalcan también tiene líneas económicas: confirmar que tengan la premium.",
+   "km_recta": 15.68
+  }
+ ],
+ "fila": [
+  {
+   "name": "Agroveterinaria Fernheim",
+   "lat": -22.3580833,
+   "lon": -60.0345755,
+   "addr": "Av. Hindenburg esq. Boreal, Filadelfia",
+   "phone": "0491 417 227",
+   "web": "https://www.fernheim.com.py/",
+   "rating": 4.4,
+   "reviews": 87,
+   "hours": [
+    [
+     "06:00-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "06:30-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "06:30-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "06:30-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "06:30-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "06:30-11:30"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Aparece en \"pro plan gato Filadelfia Paraguay\" y \"alimento premium gatos Filadelfia Paraguay\" en Google Maps; reseña: \"Todo para animales y mascotas\"",
+   "km_recta": 0.5
+  },
+  {
+   "name": "PetShop Filadelfia",
+   "lat": -22.3657661,
+   "lon": -60.0271306,
+   "addr": "C. Carayá (JXMF+M4X), Filadelfia",
+   "phone": "0985 920213",
+   "web": null,
+   "rating": null,
+   "reviews": 0,
+   "hours": [
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Aparece en la búsqueda de Google Maps \"royal canin Filadelfia Paraguay\"; ficha de pet shop (categoría Veterinario), sin reseñas ni web",
+   "km_recta": 1.5
+  },
+  {
+   "name": "Veterinaria Fernheim - Depósito Agroquímicos",
+   "lat": -22.372396,
+   "lon": -60.0397593,
+   "addr": "Filadelfia 160404 (JXH6+23)",
+   "phone": "0984 925425",
+   "web": "https://www.fernheim.com.py/",
+   "rating": 4.8,
+   "reviews": 13,
+   "hours": [
+    [
+     "07:00-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "07:00-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "07:00-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "07:00-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "07:00-11:30",
+     "14:00-18:00"
+    ],
+    [
+     "07:00-11:30"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Aparece en las búsquedas de Google Maps \"royal canin Filadelfia Paraguay\", \"pro plan gato Filadelfia Paraguay\" y \"alimento premium gatos Filadelfia Paraguay\"; veterinaria de la Cooperativa Fernheim",
+   "km_recta": 2.2
+  }
+ ],
+ "conc": [
+  {
+   "name": "Clínica Veterinaria Cuatro Patas",
+   "lat": -23.4021537,
+   "lon": -57.4397398,
+   "addr": "Av. Boquerón, Concepción",
+   "phone": "0971 469724",
+   "web": "https://www.instagram.com/clinicacuatropatas/",
+   "rating": 4.3,
+   "reviews": 38,
+   "hours": [
+    [
+     "07:30-19:00"
+    ],
+    [
+     "07:30-19:00"
+    ],
+    [
+     "07:30-19:00"
+    ],
+    [
+     "07:30-19:00"
+    ],
+    [
+     "07:30-19:00"
+    ],
+    [
+     "07:30-19:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan"
+   ],
+   "ver": "web",
+   "evid": "Instagram @clinicacuatropatas (ago-2020): \"Contamos con los productos de Purina Pro Plan\" y \"Pro Plan para nuestros gatitos pequeños\" (publicación antigua)",
+   "km_recta": 0.5
+  }
+ ],
+ "signa": [
+  {
+   "name": "Distribuidora Los Andes SRL",
+   "lat": -26.8868732,
+   "lon": -57.0262598,
+   "addr": "Mcal. Estigarribia, San Ignacio Guazú",
+   "phone": "0782 232 436",
+   "web": "https://es-la.facebook.com/Los-ANDES-SRL-926906084054993/",
+   "rating": 5.0,
+   "reviews": 15,
+   "hours": [
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [
+     "07:00-18:30"
+    ],
+    [],
+    [
+     "07:00-12:00"
+    ]
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Aparece en \"alimento premium gatos San Ignacio Guazú Paraguay\" en Google Maps; venta mayorista y minorista de productos veterinarios (Instagram @losandes_srl)",
+   "km_recta": 9.6
+  }
+ ],
+ "ayolas": [
+  {
+   "name": "Agroveterinaria Paranambu",
+   "lat": -27.3928148,
+   "lon": -56.8553969,
+   "addr": "Av. Arary, Ayolas",
+   "phone": "0983 973503",
+   "web": "https://www.instagram.com/agrovetparanambu/",
+   "rating": 4.3,
+   "reviews": 22,
+   "hours": [
+    [
+     "07:00-19:00"
+    ],
+    [
+     "07:00-19:00"
+    ],
+    [
+     "07:00-19:00"
+    ],
+    [
+     "07:00-19:00"
+    ],
+    [
+     "07:00-19:00"
+    ],
+    [
+     "07:30-18:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan"
+   ],
+   "ver": "web",
+   "evid": "Instagram @agrovetparanambu: \"...gatos castrados. PURINA PRO PLAN ... Disponible en el local\"; reseña Maps: balanceados para perros y gatos \"hasta los Premium\"; además aparece en \"royal canin Ayolas Paraguay\"",
+   "km_recta": 6.4
+  }
+ ],
+ "trini": [
+  {
+   "name": "Sadovet",
+   "lat": -27.0721537,
+   "lon": -55.6397143,
+   "addr": "Av. San Roque González (W9H6+44M), Hohenau",
+   "phone": "0775 232 872",
+   "web": "https://m.facebook.com/SadoVet/",
+   "rating": 4.5,
+   "reviews": 28,
+   "hours": [
+    [
+     "07:00-12:00",
+     "13:30-17:30"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-17:30"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-17:30"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-17:30"
+    ],
+    [
+     "07:00-12:00",
+     "13:30-17:30"
+    ],
+    [
+     "07:00-12:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Royal Canin"
+   ],
+   "ver": "web",
+   "evid": "Facebook SadoVet publica Royal Canin Urinary S/O 1,5 kg para gatos, Royal Canin Persian Adult y Recovery Fel/Can",
+   "km_recta": 2.8
+  },
+  {
+   "name": "Almacén de Mascotas Hohenau",
+   "lat": -27.069154,
+   "lon": -55.6423824,
+   "addr": "Av. Osvaldo Tischler c/ 25 de Diciembre, Hohenau",
+   "phone": "0985 310770",
+   "web": "https://www.instagram.com/almacendemascotashohenau/",
+   "rating": null,
+   "reviews": 0,
+   "hours": [
+    [
+     "08:00-12:00",
+     "14:00-18:00"
+    ],
+    [
+     "08:00-12:00",
+     "14:00-18:00"
+    ],
+    [
+     "08:00-12:00",
+     "14:00-18:00"
+    ],
+    [
+     "08:00-12:00",
+     "14:00-18:00"
+    ],
+    [
+     "08:00-12:00",
+     "14:00-18:00"
+    ],
+    [
+     "08:00-12:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Fórmula Natural"
+   ],
+   "ver": "web",
+   "evid": "Instagram @almacendemascotashohenau (abr-2026): \"Novedad en Fórmula Natural Gatos Castrados\"; tienda de alimentos y artículos para mascotas",
+   "km_recta": 2.8
+  },
+  {
+   "name": "Agroveterinaria Praderas del Sur",
+   "lat": -27.071672,
+   "lon": -55.6385571,
+   "addr": "W9H6+8HP, Hohenau",
+   "phone": "0985 100980",
+   "web": "https://www.instagram.com/praderasdelsur_hoh/",
+   "rating": 5.0,
+   "reviews": 1,
+   "hours": [
+    [
+     "07:30-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:30-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:30-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:30-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:30-12:00",
+     "13:30-18:00"
+    ],
+    [
+     "07:30-12:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Fórmula Natural"
+   ],
+   "ver": "web",
+   "evid": "Instagram @praderasdelsur_hoh: \"Línea de balanceado Formula natural, el balanceado favorito de los michis y perritos\" (7 kg); reel de Fórmula Natural \"Presentes en Hohenau @praderasdelsur_hoh\"",
+   "km_recta": 2.9
+  }
+ ],
+ "enc": [
+  {
+   "name": "Mascotienda",
+   "lat": -27.3261401,
+   "lon": -55.8621737,
+   "addr": "Av. Bernardino Caballero e Independencia Nacional, Encarnación",
+   "phone": "0991 982300",
+   "web": "https://mascotienda.com.py",
+   "rating": 5.0,
+   "reviews": 9,
+   "hours": [
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    [
+     "09:00-17:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "Excellent",
+    "Applaws",
+    "Royal Canin"
+   ],
+   "ver": "web",
+   "evid": "Tienda online mascotienda.com.py (local en Encarnación) vende Pro Plan Urinary gatos 1 kg, Purina Excellent Urinary gatos y Applaws; también Royal Canin (pouch perro)",
+   "km_recta": 4.5
+  },
+  {
+   "name": "Veterinaria Mymba",
+   "lat": -27.3404778,
+   "lon": -55.8581333,
+   "addr": "Av. Irrazábal esq. Jorge Memmel N°850, Encarnación",
+   "phone": "0984 521111",
+   "web": "https://www.instagram.com/vetmymba/",
+   "rating": 4.9,
+   "reviews": 10,
+   "hours": [
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    [
+     "08:00-19:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "N&D",
+    "Royal Canin"
+   ],
+   "ver": "web",
+   "evid": "Instagram @vetmymba: \"En Mymba encontrás alimentos para perros y gatos... Pro Plan / Cat Chow • Farmina N&D • Royal... castrados, urinary\"",
+   "km_recta": 5.8
+  },
+  {
+   "name": "Almacén de Mascotas - Encarnación",
+   "lat": -27.34713,
+   "lon": -55.8581098,
+   "addr": "Av. Irrazábal, Encarnación",
+   "phone": "0972 540000",
+   "web": "https://www.almacendemascotas.com.py/",
+   "rating": 5.0,
+   "reviews": 1,
+   "hours": [
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    [
+     "08:00-17:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "N&D",
+    "Excellent",
+    "Origens",
+    "Fórmula Natural"
+   ],
+   "ver": "web",
+   "evid": "Catálogo de la cadena almacendemascotas.com.py: Pro Plan paté gato, N&D Prime felino castrado, Excellent Cat Urinary, Origens y Fórmula Natural gatos; Facebook de la cadena anuncia sucursal en Encarnación y \"YA DISPONIBLE PRO PLAN para gatos\"",
+   "km_recta": 6.4
+  }
+ ],
+ "posadas": [
+  {
+   "name": "Animal World (Av. Francisco de Haro)",
+   "lat": -27.389682,
+   "lon": -55.9043444,
+   "addr": "Av. Francisco de Haro 4505, Posadas",
+   "phone": "+54 376 450-4018",
+   "web": "https://animalworld.com.ar/",
+   "rating": 4.3,
+   "reviews": 3631,
+   "hours": [
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ]
+   ],
+   "brands": [
+    "Pro Plan",
+    "Excellent"
+   ],
+   "ver": "web",
+   "evid": "Tienda online animalworld.com.ar vende Pro Plan Gatos Adultos, Sterilized, Urinary, 7+ y húmedos, y Excellent Cat; también en PedidosYa (Alimento Pro Plan Gato)",
+   "km_recta": 3.6
+  },
+  {
+   "name": "Natural Pet",
+   "lat": -27.3734329,
+   "lon": -55.9043181,
+   "addr": "Av. López y Planes 2718, Posadas",
+   "phone": "+54 376 451-8346",
+   "web": "https://naturalpet.com.ar/",
+   "rating": 4.7,
+   "reviews": 33,
+   "hours": [
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    []
+   ],
+   "brands": [
+    "Royal Canin",
+    "Excellent"
+   ],
+   "ver": "web",
+   "evid": "Instagram @naturalpet.ar: \"Tenemos marcas como Excellent, Balanced, Royal Canin, Old Prince...\"; reseña Maps de cliente con gatos",
+   "km_recta": 5.2
+  },
+  {
+   "name": "Animal World (Garupá, Ruta 105)",
+   "lat": -27.4668322,
+   "lon": -55.8626526,
+   "addr": "Colectora Ruta 105 y Marcelo T. de Alvear, Garupá",
+   "phone": "+54 376 450-4018",
+   "web": "https://animalworld.com.ar/",
+   "rating": 4.5,
+   "reviews": 54,
+   "hours": [
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    [
+     "08:00-22:00"
+    ],
+    []
+   ],
+   "brands": [
+    "Pro Plan",
+    "Excellent"
+   ],
+   "ver": "web",
+   "evid": "Sucursal de la cadena Animal World; su tienda online animalworld.com.ar vende Pro Plan Gatos y Excellent Cat",
+   "km_recta": 6.0
+  }
+ ],
+ "sanigmini": [
+  {
+   "name": "AnimalSer - San Ignacio",
+   "lat": -27.2553045,
+   "lon": -55.5362312,
+   "addr": "Av. San Martín 898, San Ignacio, Misiones",
+   "phone": "+54 376 482-2076",
+   "web": null,
+   "rating": 4.2,
+   "reviews": 20,
+   "hours": [
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    [
+     "08:00-12:30",
+     "16:30-20:30"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Aparece en \"royal canin San Ignacio Misiones Argentina\" en Google Maps; veterinaria y pet shop con alimentos balanceados (cadena AnimalSer)",
+   "km_recta": 0.4
+  },
+  {
+   "name": "Agro Veterinaria San Ignacio",
+   "lat": -27.2548071,
+   "lon": -55.5376946,
+   "addr": "Lavalle 825 y Av. Sarmiento, San Ignacio, Misiones",
+   "phone": "+54 376 439-8396",
+   "web": null,
+   "rating": 5.0,
+   "reviews": 3,
+   "hours": [
+    [
+     "08:00-20:30"
+    ],
+    [
+     "08:00-20:30"
+    ],
+    [
+     "08:00-20:30"
+    ],
+    [
+     "08:00-20:30"
+    ],
+    [
+     "08:00-20:30"
+    ],
+    [
+     "08:00-20:30"
+    ],
+    []
+   ],
+   "brands": [],
+   "ver": "maps-busqueda",
+   "evid": "Aparece en \"royal canin San Ignacio Misiones Argentina\" en Google Maps; ficha de veterinaria sin web ni reseñas que mencionen marcas",
+   "km_recta": 0.6
+  }
+ ]
+}

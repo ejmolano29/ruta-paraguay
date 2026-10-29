@@ -41,7 +41,8 @@ En el iPhone: abrir en Safari → Compartir → *Agregar a pantalla de inicio*.
 ## Uso
 
 - **iOverlander**: los botones abren la ficha en la app (enlace `ioverlander.com/places/<guid>`); sin la app, abre la web, que pide iniciar sesión.
-- **Qué visitar**: cada tarjeta muestra distancia y tiempo en auto desde el hospedaje elegido; Google Maps y Waze trazan la ruta desde ahí.
+- **Qué visitar, lavanderías y pet shops**: distancia y tiempo en auto desde el hospedaje elegido (o el lugar del check-in); si se cambia de sitio se recalculan. Google Maps y Waze trazan la ruta desde ahí.
+- **Pet shops**: hasta 3 por parada (a menos de 20 km) que venden comida premium para gatos, con horario de atención y si están abiertos ahora. Las paradas rurales sin pet shop cerca no muestran la sección.
 - **+ (botón rosa)**: check-in en la próxima parada, o registrar salida si ya están en una.
 - **Plan → Editar noches y orden**: cambia la propuesta del grupo; el reajuste automático muestra `Ajustado 4→3` cuando tuvo que corregir.
 - Una parada planificada sin check-in, anterior al último check-in, se marca como *Omitida*.
@@ -54,7 +55,7 @@ python tools/build_data.py <scratch>   # sitios, costos, accesos, lavanderías y
 python tools/photos.py assets/photos tools/photos.json   # fotos de Wikimedia Commons (respeta límites)
 python tools/attr_photos.py cand <tmp>  # candidatas de fotos por atracción (revisar y elegir en tools/attr_photos.json → pick)
 python tools/attr_photos.py final       # baja las elegidas a assets/photos/a/
-python tools/visit_legs.py             # distancia y tiempo de cada hospedaje a cada atracción (OSRM)
+python tools/visit_legs.py             # distancia y tiempo de cada hospedaje a cada atracción, lavandería y pet shop (OSRM)
 python tools/package.py                # genera assets/data.js
 ```
 
@@ -62,5 +63,6 @@ python tools/package.py                # genera assets/data.js
 
 - Sitios: base offline de iOverlander (comentarios hasta oct‑2026). Las fotos de usuarios de iOverlander **no** se republican; cada ficha enlaza a iOverlander. Los comentarios se muestran recortados. Se muestran en español: se usa la traducción de la app y, donde falta, la de `tools/traducciones.json` (original → español), que `package.py` aplica al generar `assets/data.js`.
 - Fotos: Wikimedia Commons, con autor y licencia en la sección *Créditos* del sitio.
+- Pet shops: `tools/petshops.json`, investigado a mano en Google Maps (ubicación y horario) y en las webs, redes o reseñas de cada tienda (marcas). `evid` dice cómo se comprobó la marca.
 - Rutas: OSRM / OpenStreetMap. Lavanderías y campings de Posadas: OpenStreetMap. Mapa: Esri.
 - Navidad: Canal 12 Misiones, Misiones Online, Última Hora (enlaces en la sección Navidad).

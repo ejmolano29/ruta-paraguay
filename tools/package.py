@@ -45,6 +45,13 @@ for p in d['places'].values():
 for s in d['stops'] + d['optional']:
     for l in s.get('laundry', []): l['note'] = tr(l['note'])
 
+# pet shops con comida premium para gatos (investigados en Google Maps y webs de las tiendas): tools/petshops.json
+PETS = json.load(open('tools/petshops.json')) if os.path.exists('tools/petshops.json') else {}
+PET_KEYS = ('name', 'lat', 'lon', 'addr', 'phone', 'web', 'rating', 'reviews', 'hours', 'brands', 'ver', 'evid')
+for s in d['stops'] + d['optional']:
+    pets = PETS.get(s['key']) or PETS.get({'asu2': 'asu1'}.get(s['key']), [])
+    if pets: s['pets'] = [{k: p[k] for k in PET_KEYS if p.get(k) is not None} for p in pets]
+
 # los comentarios de iOverlander se recortan: el sitio es público y enlaza a iOverlander para leer el resto
 PRICE = re.compile(r'(₲|R\$|US\$|\$)\s?\d|\d[\d.,\s’\']*\s?(k\b|mil\b|gs|g\b|g/|pyg|guaran|r\$|reais|usd|d[oó]lar)', re.I)
 for p in d['places'].values():
