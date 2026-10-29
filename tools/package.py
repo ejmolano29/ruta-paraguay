@@ -33,6 +33,18 @@ photos['cde'] = photos.get('monday', [])[:2] + photos.get('cde', [])
 photos['asu2'] = photos.get('asu2', []) + [p for p in photos.get('asu1', []) if p not in photos.get('asu2', [])][:2]
 attr = {str(i): f'assets/photos/th/{n}.jpg' for i, n in ATTR.items() if os.path.exists(f'assets/photos/{n}.jpg')}
 
+# textos de iOverlander sin traducción al español en la base offline: tools/traducciones.json (original -> español)
+TR = json.load(open('tools/traducciones.json')) if os.path.exists('tools/traducciones.json') else {}
+VEH = {'van': 'furgoneta', 'truck_camper': 'camioneta con cámper'}
+tr = lambda t: TR.get(t, t)
+for p in d['places'].values():
+    p['desc'] = tr(p.get('desc'))
+    if p.get('cost'): p['cost']['text'] = tr(p['cost']['text'])
+    for c in p.get('road', []): c['text'] = tr(c['text'])
+    p['comments'] = [dict(c, text=tr(c['text']), veh=VEH.get(c.get('veh'), c.get('veh'))) for c in p.get('comments', [])]
+for s in d['stops'] + d['optional']:
+    for l in s.get('laundry', []): l['note'] = tr(l['note'])
+
 # los comentarios de iOverlander se recortan: el sitio es público y enlaza a iOverlander para leer el resto
 PRICE = re.compile(r'(₲|R\$|US\$|\$)\s?\d|\d[\d.,\s’\']*\s?(k\b|mil\b|gs|g\b|g/|pyg|guaran|r\$|reais|usd|d[oó]lar)', re.I)
 for p in d['places'].values():

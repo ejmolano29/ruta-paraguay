@@ -33,7 +33,7 @@ svg{display:block}
 .who .live{width:8px;height:8px;border-radius:50%;background:var(--mut)}
 .who .live.on{background:var(--ok)}
 
-/* ---------- hero ---------- */
+/* ---------- portada ---------- */
 .hero{display:grid;gap:22px;padding:18px 0 8px}
 .hero h1{font-size:clamp(38px,10.5vw,76px);line-height:1.02;letter-spacing:-1.6px;margin:0;font-weight:800}
 .hero h1 em{font-style:normal;color:var(--pink)}

@@ -10,7 +10,7 @@ def km(a, b, c, e):
     x = math.sin(r(c - a) / 2) ** 2 + math.cos(r(a)) * math.cos(r(c)) * math.sin(r(e - b) / 2) ** 2
     return 2 * R * math.asin(math.sqrt(x))
 
-# ---------------------------------------------------------------- stops
+# ---------------------------------------------------------------- paradas
 # n19 / n12 = noches en cada escenario de salida (0 = no se usa)
 # lodging: id iOverlander principal; alts: alternativas; attr: atracciones
 # ids negativos = sitios fuera de iOverlander (web / OSM)

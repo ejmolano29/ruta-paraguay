@@ -60,7 +60,7 @@ python tools/package.py                # genera assets/data.js
 
 ## Fuentes y créditos
 
-- Sitios: base offline de iOverlander (comentarios hasta oct‑2026). Las fotos de usuarios de iOverlander **no** se republican; cada ficha enlaza a iOverlander. Los comentarios se muestran recortados.
+- Sitios: base offline de iOverlander (comentarios hasta oct‑2026). Las fotos de usuarios de iOverlander **no** se republican; cada ficha enlaza a iOverlander. Los comentarios se muestran recortados. Se muestran en español: se usa la traducción de la app y, donde falta, la de `tools/traducciones.json` (original → español), que `package.py` aplica al generar `assets/data.js`.
 - Fotos: Wikimedia Commons, con autor y licencia en la sección *Créditos* del sitio.
 - Rutas: OSRM / OpenStreetMap. Lavanderías y campings de Posadas: OpenStreetMap. Mapa: Esri.
 - Navidad: Canal 12 Misiones, Misiones Online, Última Hora (enlaces en la sección Navidad).
